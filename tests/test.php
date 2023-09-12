@@ -1,7 +1,7 @@
 <?php
-include '../vendor/autoload.php';
+include __dir__.'/../vendor/autoload.php';
 
-$p = new \Pejman\DomParser\Parser( file_get_contents('data/a.txt') );
+$p = new \Pejman\DomParser\Parser( file_get_contents(__dir__.'/data/a.txt') );
 
 print_r( $p->find() );
 print_r($tests = $p->find(".test1"));
