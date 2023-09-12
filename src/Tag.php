@@ -15,6 +15,7 @@ class Tag {
 
 	}
 
+
 	function next() {
 		$tags = Parser::$allTags;
 		return $this->findNext( $tags );
@@ -65,7 +66,7 @@ class Tag {
 		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.$content.'</'.$tag->tag.'>';
 	}
 
-	function getHtml( $childrens ) {
+	private function concatHtmls( $childrens ) {
 		$html = '';
 		foreach( $childrens as $child ) {
 			if( @$child->tag == 'empty' )
@@ -73,7 +74,7 @@ class Tag {
 			else {
 				$ct = '';
 				if( $child->childrens )
-					$ct = $this->getHtml( $child->childrens );
+					$ct = $this->concatHtmls( $child->childrens );
 				$html .= $this->makeHtml( $child, $ct );
 			}
 
@@ -82,25 +83,25 @@ class Tag {
 	}	
 
 	function html() {
-		return $this->getHtml( $this->childrens );
+		return $this->concatHtmls( $this->childrens );
 	}
 
 	function outerHtml() {
-		return $this->makeHtml( $this, $this->getHtml( $this->childrens ) );
+		return $this->makeHtml( $this, $this->concatHtmls( $this->childrens ) );
 	}
 
 	function text() {
-		return $this->getText( $this->childrens );
+		return $this->concatTexts( $this->childrens );
 	}
 
-	function getText( $childrens ) {
+	private function concatTexts( $childrens ) {
 		$html = '';
 		foreach( $childrens as $child ) {
 			if( @$child->content )
 				$html .= $child->content;
 			
 			if( @$child->childrens ){
-				if( $t = $this->getText( $child->childrens ) )
+				if( $t = $this->concatTexts( $child->childrens ) )
 					$html .= $t;
 			}
 		}
