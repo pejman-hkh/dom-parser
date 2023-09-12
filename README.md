@@ -1,5 +1,5 @@
 # dom-parser
-Fast php DOM parser
+Fast php HTML DOM parser
 - All php version work properly without extension
 - No php extension need
 - No Regex used
