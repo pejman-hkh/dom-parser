@@ -10,7 +10,7 @@ composer require pejman/dom-parser
 ```
 
 
-in this project i haven't used Regex, I just parsed with pure php
+in this project I haven't used Regex, I just parsed with pure php
 
 Yet I'm working on it
 
