@@ -61,9 +61,33 @@ class Tag {
 
 	}
 
-	function html() {
+	function makeHtml( $tag, $content ) {
+		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.$content.'</'.$tag->tag.'>';
+	}
 
+	function getHtml( $childrens ) {
+		$html = '';
+		foreach( $childrens as $child ) {
+			if( @$child->tag == 'empty' )
+				$html .= $child->content;
+			else {
+				$ct = '';
+				if( $child->childrens )
+					$ct = $this->getHtml( $child->childrens );
+				$html .= $this->makeHtml( $child, $ct );
+			}
+
+		}
+		return $html;
 	}	
+
+	function html() {
+		return $this->getHtml( $this->childrens );
+	}
+
+	function outerHtml() {
+		return $this->makeHtml( $this, $this->getHtml( $this->childrens ) );
+	}
 
 	function text() {
 		return $this->getText( $this->childrens );
