@@ -3,6 +3,6 @@ namespace Pejman\DomParser;
 
 class Attrs {
 	function classes() {
-		return explode(" ", $this->class);
+		return explode(" ", @$this->class);
 	}
 }
