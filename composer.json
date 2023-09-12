@@ -1,0 +1,16 @@
+{
+    "name": "pejman/dom-parser",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Pejman\\DomParser\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pejman",
+            "email": "pejman.hkh@gmail.com"
+        }
+    ],
+    "require": {}
+}
