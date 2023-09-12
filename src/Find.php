@@ -39,15 +39,30 @@ class Find {
 		$q = new Query();
 		$q->iq = 0;
 		$q->query = $query;
+		$ret = $tags;
 		while(  $query = $q->getQueries() ) {
 
-			$q->mQuery = $query;
-			$q->miq = 0;
-			$attrs = $q->parseQuery();
+			if( $query == ',' ) {
 
-			$tags = $this->findAttr( $attrs, $tags);
+				$q->mQuery = $q->getQueries();
+				$q->miq = 0;
+				$attrs = $q->parseQuery();
+			
+				$finded = $this->findAttr( $attrs, $tags);
+				foreach( $finded as $f ) {
+					$ret[] = $f;
+				}
+			}
+			else {
+		
+				$q->mQuery = $query;
+				$q->miq = 0;
+				$attrs = $q->parseQuery();
+
+				$ret = $this->findAttr( $attrs, $ret);
+			}
 		}
 		
-		return $tags;
+		return $ret;
 	}
 }

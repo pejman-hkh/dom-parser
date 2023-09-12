@@ -2,10 +2,20 @@
 namespace Pejman\DomParser;
 class Query {
 	function getQueries() {
+		$c = @$this->query[ $this->iq ];
+
+		if( $c == ' ' || $c == ',' || $c == '>') {
+			$this->iq++;
+			return $c;
+		}
+
 		$a = '';
-		while( @$c = $this->query[ $this->iq++ ] ) {
-			if( $c == ' ')
+		while( @$c = @$this->query[ $this->iq++ ] ) {
+			$this->sep = ' ';
+			if( $c == ' ' || $c == ',' || $c == '>') {
+				$this->iq--;
 				break;
+			}
 			$a .= $c;
 		}
 		return $a;
