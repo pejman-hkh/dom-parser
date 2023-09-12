@@ -1,5 +1,8 @@
 # dom-parser
 Fast php DOM parser
+- No php extension need
+- No Regex used
+- Can embed to another languages like js
 
 # Install :
 ```
