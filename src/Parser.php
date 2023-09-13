@@ -71,7 +71,7 @@ class Parser {
 			$tag .= $c1;
 		}
 
-		$ret = new Tag($this->id++);
+		$ret = new Tag($this);
 		$ret->tag = $tag;
 	
 		if( @$attrs )
@@ -100,7 +100,7 @@ class Parser {
 		}
 		$this->i--;
 
-		$tag = new Tag($this->id++);
+		$tag = new Tag($this);
 		$tag->tag = 'empty';
 		$tag->content = $content;
 
@@ -129,7 +129,7 @@ class Parser {
 
 		$this->i += 3;
 
-		$tag = new Tag($this->id++);
+		$tag = new Tag($this);
 		$tag->tag = 'comment';
 		$tag->content = $content;
 
@@ -244,9 +244,9 @@ class Parser {
 		return $tags;
 	}
 
-	function find( $query = '' ) {
+	function find( $query = '', $index = [] ) {
 		$f = new Find();
-		return $f->find( $query, $this->tags );
+		return $f->find( $query, $this->tags, $index );
 	}
 
 	public static $allTags;
