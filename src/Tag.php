@@ -9,11 +9,11 @@ class Tag {
 		$this->parser = $parser;	
 	}
 
-    public function __debugInfo()
-    {
-        return json_decode(json_encode($this), true);
-    }
-    
+	public function __debugInfo()
+	{
+		return json_decode(json_encode($this), true);
+	}
+
 	function find( $query, $index = []) {
 		$f = new Find();
 		return $f->find( $query, [ $this ], $index );
