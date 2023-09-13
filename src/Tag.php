@@ -19,6 +19,23 @@ class Tag {
 		return $f->find( $query, [ $this ], $index );
 	}
 
+	private function notEmpty() {
+		$ret = [];
+		foreach($this->childrens as $child ) {
+			if( $child->tag != 'empty')
+				$ret[] = $child;
+		}
+		return $ret;
+	}
+	function children( $index = [] ) {
+		$ret = $this->notEmpty();
+		if( ! is_array( $index ) ) {
+			$ret = @$ret[ $index ];
+		}
+
+		return $ret;
+	}
+
 	function parent() {
 
 	}
