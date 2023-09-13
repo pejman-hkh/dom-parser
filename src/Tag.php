@@ -3,12 +3,20 @@ namespace Pejman\DomParser;
 
 class Tag {
 
-	function __construct( $id ) {
-		$this->id = $id;		
+	private $parser;
+	function __construct( $parser ) {
+		$this->id = $parser->id++;	
+		$this->parser = $parser;	
 	}
 
-	function find() {
-
+    public function __debugInfo()
+    {
+        return json_decode(json_encode($this), true);
+    }
+    
+	function find( $query, $index = []) {
+		$f = new Find();
+		return $f->find( $query, [ $this ], $index );
 	}
 
 	function parent() {
@@ -17,8 +25,7 @@ class Tag {
 
 
 	function next() {
-		$tags = Parser::$allTags;
-		return $this->findNext( $tags );
+		return $this->findNext( $this->parser->tags );
 	}	
 
 	private function findNext( $tags ) {
@@ -40,8 +47,7 @@ class Tag {
 	}
 
 	function prev() {
-		$tags = Parser::$allTags;
-		return $this->findPrev( $tags );
+		return $this->findPrev( $this->parser->tags );
 	}
 
 	private function findPrev( $tags ) {
