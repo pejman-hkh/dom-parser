@@ -33,9 +33,10 @@ class Find {
 		return $ret;
 	}
 
-	function find( $query = '', $tags = [] ) {
+	function find( $query = '', $tags = [], $index = [] ) {
 		if( ! $query )
 			return $tags;
+		
 		$q = new Query();
 		$q->iq = 0;
 		$q->query = $query;
@@ -62,7 +63,11 @@ class Find {
 				$ret = $this->findAttr( $attrs, $ret);
 			}
 		}
+
+		if( ! is_array( $index ) )
+			$ret = $ret[ $index ];
 		
+
 		return $ret;
 	}
 }
