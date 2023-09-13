@@ -4,7 +4,7 @@ namespace Pejman\DomParser;
 class Tag {
 
 	private $parser;
-	function __construct( $parser ) {
+	function __construct( &$parser ) {
 		$this->id = $parser->id++;	
 		$this->parser = $parser;	
 	}
