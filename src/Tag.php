@@ -27,6 +27,19 @@ class Tag {
 		}
 		return $ret;
 	}
+	
+	function getElementById( $id ) {
+		return $this->find("#".$id)[0];
+	}
+	
+	function getElementByTagName( $name ) {
+		return $this->find($name)[0];
+	}
+	
+	function getElementsByTagName( $name ) {
+		return $this->find($name);
+	}
+
 	function children( $index = [] ) {
 		$ret = $this->notEmpty();
 		if( ! is_array( $index ) ) {
@@ -36,8 +49,40 @@ class Tag {
 		return $ret;
 	}
 
-	function parent() {
+	function attr( $name, $value = '' ) {
+		if( $value )
+			return $this->setAttribute( $name, $value );
 
+		return $this->getAttribute( $name );
+	}
+
+	function setAttribute( $name, $value ) {
+		$this->attrs->set( $name, $value );
+		return $this;
+	}
+	
+	function getAttribute( $name ) {
+		$this->attrs->get( $name );
+		return $this;
+	}
+
+	private function findParent( $ptag = [], $tags ) {
+
+		$ret = [];
+		foreach( $tags as $tag ) {
+			if( $tag->id == $this->id )
+				return $ptag;
+
+			if( @$tag->childrens ) {
+				if( $n = $this->findParent( $tag, $tag->childrens ) )
+					return $n;
+			}
+		}
+		return;	
+	}
+
+	function parent() {
+		return $this->findParent( new Tag($this->parser), $this->parser->tags );
 	}
 
 
