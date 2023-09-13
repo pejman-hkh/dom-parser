@@ -6,6 +6,14 @@ class Attrs {
 		return explode(" ", @$this->class);
 	}
 
+	function set( $key, $value ) {
+		$this->$key = $value;
+	}
+
+	function get( $key ) {
+		return $this->$key;
+	}
+
 	function makeAttrsText() {
 		$ret = '';
 		$pre = '';
