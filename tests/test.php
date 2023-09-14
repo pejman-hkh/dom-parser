@@ -3,15 +3,18 @@ include __dir__.'/../vendor/autoload.php';
 
 $p = new \Pejman\DomParser\Parser( file_get_contents(__dir__.'/data/a.txt') );
 
-var_dump( $p->find() );
-var_dump($tests = $p->find(".test1"));
+$tests = $p->find(".test1");
 $test = $tests[0];
 echo $test->outerHtml();
-
-var_dump( $test->next());
-var_dump( $test->prev() );
+echo "\n";
+echo( $test->next()->html() );
+echo "\n";
+echo( $test->prev()->html() );
+echo "\n";
 
 echo $test->text();
+echo "\n";
 
-var_dump( $p->find("body") );
-var_dump( $p->find("input[type=button]") );
+echo( $p->find("body",0)->html() );
+echo "\n";
+echo( $p->find("input[type=button]",0)->html() );
