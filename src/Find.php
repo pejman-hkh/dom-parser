@@ -54,13 +54,13 @@ class Find {
 					$ret[] = $f;
 				}
 			}
-			else {
-		
+			else if( ! empty( trim( $query ) ) ){
+	
 				$q->mQuery = $query;
 				$q->miq = 0;
 				$attrs = $q->parseQuery();
-
 				$ret = $this->findAttr( $attrs, $ret);
+				
 			}
 		}
 
