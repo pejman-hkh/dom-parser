@@ -17,7 +17,7 @@ Yet I'm working on it
 
 Now we can find in html with class and id and attributes
 
-```
+```php
 $element = $p->find(".test",0);
 $element->next;
 $element->next();
