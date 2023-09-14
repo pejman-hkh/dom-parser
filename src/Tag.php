@@ -9,7 +9,6 @@ class Tag {
 		$this->parser = $parser;	
 	}
 
-	public function __debugInfo()
 	{
 		return json_decode(json_encode($this), true);
 	}
