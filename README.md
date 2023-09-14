@@ -56,5 +56,10 @@ $element->html();
 $element->text();
 $element->outerHtml();
 
+
+//remove element
+$p->find(".test", 0)->remove();
+var_dump( $p->find(".test") );
+
 ```
 
