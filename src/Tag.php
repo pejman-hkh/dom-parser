@@ -83,7 +83,7 @@ class Tag {
 				$html .= $child->content;
 			else {
 				$ct = '';
-				if( $child->childrens )
+				if( @$child->childrens )
 					$ct = $this->concatHtmls( $child->childrens );
 				$html .= $this->makeHtml( $child, $ct );
 			}
