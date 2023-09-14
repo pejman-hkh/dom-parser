@@ -3,15 +3,9 @@ namespace Pejman\DomParser;
 
 class Tag {
 
-	private $parser;
-	function __construct( &$parser ) {
-		$this->id = $parser->id++;	
-		$this->parser = $parser;	
+	function __construct() {
 	}
 
-	{
-		return json_decode(json_encode($this), true);
-	}
 
 	function find( $query, $index = []) {
 		$f = new Find();
@@ -65,68 +59,17 @@ class Tag {
 		return $this;
 	}
 
-	private function findParent( $ptag = [], $tags ) {
-
-		$ret = [];
-		foreach( $tags as $tag ) {
-			if( $tag->id == $this->id )
-				return $ptag;
-
-			if( @$tag->childrens ) {
-				if( $n = $this->findParent( $tag, $tag->childrens ) )
-					return $n;
-			}
-		}
-		return;	
-	}
-
 	function parent() {
-		return $this->findParent( new Tag($this->parser), $this->parser->tags );
+		return $this->parent;
 	}
 
 
 	function next() {
-		return $this->findNext( $this->parser->tags );
+		return $this->next;
 	}	
 
-	private function findNext( $tags ) {
-		
-		$next = false;
-		$ret = [];
-		foreach( $tags as $tag ) {
-			if( $next )
-				return $tag;
-			if( $tag->id == $this->id )
-				$next = true;
-
-			if( @$tag->childrens ) {
-				if( $n = $this->findNext( $tag->childrens ) )
-					return $n;
-			}
-		}
-		return;
-	}
-
 	function prev() {
-		return $this->findPrev( $this->parser->tags );
-	}
-
-	private function findPrev( $tags ) {
-		
-		$ptag = '';
-		foreach( $tags as $tag ) {
-
-			if( $tag->id == $this->id )
-				return $ptag;
-
-			if( @$tag->childrens ) {
-				if( $n = $this->findPrev( $tag->childrens ) )
-					return $n;
-			}
-
-			$ptag = $tag;
-		}
-
+		return $this->prev;
 	}
 
 	function makeHtml( $tag, $content ) {
