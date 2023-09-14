@@ -249,7 +249,7 @@ class Parser {
 		$tags = [];
 		while( $tag = $this->getTag() ) {
 		
-			if( @$tag->isEnd && $parent->tag == $tag->tag ) break;
+			if( @$tag->isEnd && @$parent->tag == @$tag->tag ) break;
 
 			if( @$tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
