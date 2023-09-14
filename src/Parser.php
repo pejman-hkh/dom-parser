@@ -87,7 +87,7 @@ class Parser {
 			$tag .= $c1;
 		}
 
-		$ret = new Tag($this);
+		$ret = new Tag;
 		$ret->tag = $tag;
 	
 		if( @$attrs )
@@ -116,7 +116,7 @@ class Parser {
 		}
 		$this->i--;
 
-		$tag = new Tag($this);
+		$tag = new Tag;
 		$tag->tag = 'empty';
 		$tag->content = $content;
 
@@ -145,7 +145,7 @@ class Parser {
 
 		$this->i += 3;
 
-		$tag = new Tag($this);
+		$tag = new Tag;
 		$tag->tag = 'comment';
 		$tag->content = $content;
 
@@ -247,16 +247,23 @@ class Parser {
 	function parse( &$parent = '' ) {
 
 		$tags = [];
+		$stag = new Tag;
 		while( $tag = $this->getTag() ) {
-		
+
 			if( @$tag->isEnd && @$parent->tag == @$tag->tag ) break;
 
 			if( @$tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
 
 			if( ! @$tag->isEnd ) {
+
+				$tag->prev = $stag;
+				$tag->parent = $parent;
+				$stag->next = $tag;
+
 				$tags[] = $tag;
 			}
+
 			$stag = $tag;
 		}
 
