@@ -16,11 +16,14 @@ class Parser {
 				continue;
 			}
 
+			$t = '';
 			if( $c1 == '=' ) {
+			
 				$nowAttr = $attr;
+				//echo $nowAttr;
+
 				$attr = '';
 
-				$t = '';
 				if( $this->html[ $this->i ] == '"' || $this->html[ $this->i ] == "'" ) {
 					$t = $this->html[ $this->i ];
 					$this->i++;
@@ -28,31 +31,44 @@ class Parser {
 			
 				$value = '';
 				while( ! $this->empty( $c2 = $this->nextTok() ) ) {
-					
-					if( $c2 == $t ) {
+					if( ! $t && $c2 == ' ') {
 						break;
 					}
 
+					if( ! $t && $c2 == '>') {
+						$this->i--;
+						break;
+					}
+
+					if( $c2 == $t )
+						break;
+					
 					$value .= $c2;
 				}
-
+		
 				$attrs->$nowAttr = $value;
 
 				$attr = '';
+
 			}
 
-			$attr .= $c1;
+			if( !$t && $c1 == '=')
+				continue;
+
 		
 			if( $c1 == '>' ) {
+				if( $attr != '' && $attr != '=' && $attr != '/' )
+					$attrs->$attr = '';
 				break;
 			}
+			$attr .= $c1;
 		}
 
 		return $attrs;
 	}
 
 	function ParseTag() {
-		if( $this->html[ $this->i+1 ] == '/' ) $this->i++;
+		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$tag = '';
 
