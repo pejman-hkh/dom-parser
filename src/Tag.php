@@ -24,6 +24,9 @@ class Tag {
 		return $f->find( $query, [ $this ], $index );
 	}
 
+	function remove() {
+		unset( $this->parent->childrens[ $this->eq ] );
+	}
 	private function notEmpty() {
 		$ret = [];
 		foreach($this->childrens as $child ) {
