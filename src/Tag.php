@@ -7,13 +7,13 @@ class Tag {
 	}
 
 	function __get( $key ) {
-		if( $this->attrs->$key )
+		if( @$this->attrs->$key )
 			return $this->attrs->$key;
-		return $this->$key;
+		return @$this->$key;
 	}
 
 	function __set( $key, $value ) {
-		if( $this->attrs->$key )
+		if( @$this->attrs->$key )
 			$this->attr($key, $value);
 
 		$this->$key = $value;
