@@ -18,10 +18,43 @@ Yet I'm working on it
 Now we can find in html with class and id and attributes
 
 ```
-$p->find();
-$p->find(".test");
-$p->find("#test");
-$p->find("input[type=button]");
+$element = $p->find(".test",0);
+$element->next;
+$element->next();
+
+$element->prev;
+$element->prev();
+
+$element->parent;
+$element->parent();
+
+//all childs
+$element->children();
+
+//first child
+$element->children(0);
+
+//all attributes
+$element->attrs;
+
+//find in tag
+$element->find("span");
+
+//set attr
+$element->attr( $key, $value );
+
+//set attr
+$element->href='test';
+//get attr
+$element->href;
+
+$element->getElementById("test");
+$element->getElementByTagName("span");
+$element->getElementsByTagName("span");
+
+$element->html();
+$element->text();
+$element->outerHtml();
+
 ```
 
-I wrote somethings like next,prev,text,... that i'll complete it at the future
