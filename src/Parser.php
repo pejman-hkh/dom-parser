@@ -248,6 +248,7 @@ class Parser {
 
 		$tags = [];
 		$stag = new Tag;
+		$eq = 0;
 		while( $tag = $this->getTag() ) {
 
 			if( @$tag->isEnd && @$parent->tag == @$tag->tag ) break;
@@ -256,7 +257,7 @@ class Parser {
 				continue;
 
 			if( ! @$tag->isEnd ) {
-
+				$tag->eq = $eq++;
 				$tag->prev = $stag;
 				$tag->parent = $parent;
 				$stag->next = $tag;
@@ -272,10 +273,8 @@ class Parser {
 
 	function find( $query = '', $index = [] ) {
 		$f = new Find();
-		return $f->find( $query, $this->tags, $index );
+		return $f->find( $query, $this->document->childrens, $index );
 	}
-
-	public static $allTags;
 
 	function __construct( $html ) {
 		$this->tags = [];
@@ -283,8 +282,10 @@ class Parser {
 		$this->i = 0;
 		$this->id = 0;
 		
-		$this->tags = $this->parse();
+		$document = new Tag;
+		$document->tag = 'document';
+		$document->childrens = $this->parse( $document );
 
-		self::$allTags = $this->tags;
+		$this->document = $document;
 	}
 }
