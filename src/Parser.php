@@ -199,25 +199,26 @@ class Parser {
 	function getTag() {
 
 		$tag = $this->next();
-
 		if( ! @$tag )
 			return;
 
 		if( in_array( @$tag->tag, ['comment', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'] ) ) return $tag;
 
 		if( @$tag->isEnd ) return $tag;
+
 		if( $tag->tag == 'script' ) {
 			$content = $this->parseScriptInner();
 			$tag->content = $content;
 		} else {
-			$childrens = $this->parse();
+			$childrens = $this->parse( $tag );
 			if( $childrens )
 				$tag->childrens = $childrens;			
 		}
 
 
-		if( @$tag->tag == @$this->current->tag )
+		if( @$tag->tag == @$this->current->tag ) {
 			return $tag;
+		}
 
 		while( $etag = $this->next() ) {
 			if( $tag->tag == @$etag->tag )
