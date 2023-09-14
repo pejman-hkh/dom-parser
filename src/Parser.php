@@ -244,18 +244,20 @@ class Parser {
 		return $tag;
 	}
 
-	function parse() {
+	function parse( &$parent = '' ) {
 
 		$tags = [];
-
 		while( $tag = $this->getTag() ) {
-
-			if( @$tag->isEnd ) break;
+		
+			if( @$tag->isEnd && $parent->tag == $tag->tag ) break;
 
 			if( @$tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
-			
-			$tags[] = $tag;
+
+			if( ! @$tag->isEnd ) {
+				$tags[] = $tag;
+			}
+			$stag = $tag;
 		}
 
 		return $tags;
@@ -273,7 +275,9 @@ class Parser {
 		$this->html = $html;
 		$this->i = 0;
 		$this->id = 0;
+		
 		$this->tags = $this->parse();
+
 		self::$allTags = $this->tags;
 	}
 }
