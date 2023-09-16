@@ -17,7 +17,7 @@ function removeFromObject( &$object ) {
 	return $object;
 }
 
-function dump( &$object ) {
+function dump( $object ) {
 	$t = unserialize(serialize($object));
 	removeFromObject( $t );
 	var_dump( $t );
