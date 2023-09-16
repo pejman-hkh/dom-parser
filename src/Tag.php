@@ -13,7 +13,7 @@ class Tag {
 	}
 
 	function __set( $key, $value ) {
-	
+
 		if( @$this->attrs->$key )
 			$this->attr($key, $value);
 
@@ -27,7 +27,9 @@ class Tag {
 
 	function remove() {
 		unset( $this->parent->childrens[ $this->eq ] );
+		$this->updateParentsHtml( $this->parent );
 	}
+	
 	private function notEmpty() {
 		$ret = [];
 		foreach($this->childrens as $child ) {

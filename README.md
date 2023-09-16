@@ -66,7 +66,5 @@ $element->html('ddd');
 //get html
 $element->html();
 $element->html;
-
-
 ```
 
