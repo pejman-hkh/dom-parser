@@ -20,8 +20,6 @@ class Parser {
 			if( $c1 == '=' ) {
 			
 				$nowAttr = $attr;
-				//echo $nowAttr;
-
 				$attr = '';
 
 				if( $this->html[ $this->i ] == '"' || $this->html[ $this->i ] == "'" ) {
@@ -47,9 +45,7 @@ class Parser {
 				}
 		
 				$attrs->$nowAttr = $value;
-
 				$attr = '';
-
 			}
 
 			if( !$t && $c1 == '=')
@@ -71,7 +67,6 @@ class Parser {
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$tag = '';
-
 		while( $c1 = @$this->html[ $this->i++ ] ) {
 
 			if( $c1 == '>') {
@@ -142,7 +137,6 @@ class Parser {
 
 			$content .= $c1;
 		}
-
 		$this->i += 3;
 
 		$tag = new Tag;
@@ -153,14 +147,10 @@ class Parser {
 	}
 
 	function next1() {
-
-	
 		$c = @$this->html[$this->i++];
-
 		if( ! $c ) return ;
 	
 		if( $c == '<') {
-		
 			if( $this->html[ $this->i ] == '!' && $this->html[ $this->i+1 ] == '-' && $this->html[ $this->i+2 ] == '-' )
 				return $this->parseComment();
 
@@ -192,7 +182,6 @@ class Parser {
 				return false;
 		
 		}
-
 		return true;
 	}
 
@@ -231,7 +220,6 @@ class Parser {
 				$tag->childrens = $childrens;			
 		}
 
-
 		if( @$tag->tag == @$this->current->tag ) {
 			return $tag;
 		}
@@ -261,7 +249,7 @@ class Parser {
 				$tag->prev = $stag;
 				$tag->parent = $parent;
 				$stag->next = $tag;
-
+				$tag->html = $tag->getHtml();
 				$tags[] = $tag;
 			}
 
@@ -285,7 +273,6 @@ class Parser {
 		$document = new Tag;
 		$document->tag = 'document';
 		$document->childrens = $this->parse( $document );
-
 		$this->document = $document;
 	}
 }

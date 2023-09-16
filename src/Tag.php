@@ -13,6 +13,7 @@ class Tag {
 	}
 
 	function __set( $key, $value ) {
+	
 		if( @$this->attrs->$key )
 			$this->attr($key, $value);
 
@@ -93,7 +94,7 @@ class Tag {
 
 	private function concatHtmls( $childrens ) {
 		$html = '';
-		foreach( $childrens as $child ) {
+		if( @$childrens ) foreach( $childrens as $child ) {
 			if( @$child->tag == 'empty' )
 				$html .= $child->content;
 			else {
