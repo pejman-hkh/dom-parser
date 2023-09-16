@@ -2,10 +2,6 @@
 namespace React;
 include __dir__.'/../vendor/autoload.php';
 
-function e( $html ) {
-	return new \Pejman\DomParser\Parser( $html );
-}
-
 function render( $html ) {
 	$el = e( $html );
 	$ret = '';
