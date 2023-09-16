@@ -1,28 +1,6 @@
 <?php
 namespace Pejman\DomParser;
 
-function removeFromObject( &$object ) {
-	$ret = [];
-	if( is_array( $object ) ) {
-		foreach( $object as $o ) {
-			removeFromObject( $o );
-		}
-	} else {
-		if( $object->childrens )
-			removeFromObject( $object->childrens );
-		$object->next = 'Next';
-		$object->prev = 'Prev';
-		$object->parent = 'Parent';
-	}
-	return $object;
-}
-
-function dump( $object ) {
-	$t = unserialize(serialize($object));
-	removeFromObject( $t );
-	var_dump( $t );
-}
-
 class Parser {
 
 	function ParseAttr() {
