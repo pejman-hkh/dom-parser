@@ -11,11 +11,11 @@ function render( $html ) {
 	$ret = '';
 	foreach( $el->document->childrens as $child ) {
 
-		if( function_exists( __NAMESPACE__.'\\'.$child->tag ) ) {
+		if( ctype_upper( substr($child->tag, 0, 1) ) && function_exists( __NAMESPACE__.'\\'.$child->tag ) ) {
 			$fn = $child->tag;
 		
 			$component = call_user_func_array(__NAMESPACE__.'\\'.$fn, [ $child->attrs, render($child->html()) ] );
-			$ret .= $component->document->getHtml();
+			$ret .= $component;
 		} else {
 			if( $child->tag == 'empty')
 				$ret .= $child->content;
@@ -33,13 +33,13 @@ echo render( '<Header title="test">test <Link to="https://www.google.com/">Googl
 
 
 function Header( $props, $childrens ) {
-	return e('<header><nav><ul><li><a href="/">Home</a></li></ul></nav>'.$childrens.'</header><h1>'.$props->title.'</h1>');
+	return render('<header><nav><ul><li><a href="/">Home</a></li></ul></nav>'.$childrens.'</header><h1>'.@$props->title.'</h1>');
 }
 
 function Link( $props, $childrens ) {
-	return e('<a href="'.$props->to.'">'.$childrens.'</a>');
+	return render('<a href="'.$props->to.'">'.$childrens.'</a>');
 }
 
 function Footer( $props, $childrens ) {
-	return e('<footer>'.$childrens.'</footer>');
+	return render('<footer><Link to="https://www.peji.ir">Peji</Link> '.$childrens.'</footer>');
 }
