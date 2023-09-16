@@ -29,7 +29,7 @@ class Tag {
 		unset( $this->parent->childrens[ $this->eq ] );
 		$this->updateParentsHtml( $this->parent );
 	}
-	
+
 	private function notEmpty() {
 		$ret = [];
 		foreach($this->childrens as $child ) {
@@ -121,6 +121,10 @@ class Tag {
 			$p = new Parser( $html );
 			$childs = $p->find();
 			$this->childrens = $childs;
+			foreach( $childs as $child ) {
+				$child->parent = $this;
+			}
+			
 			$this->html = $this->getHtml();
 			$this->updateParentsHtml( $this->parent );
 			return $this;
