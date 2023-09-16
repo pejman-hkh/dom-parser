@@ -107,7 +107,26 @@ class Tag {
 		return $html;
 	}	
 
-	function html() {
+	function updateParentsHtml( $parent ) {
+		$parent->html = $parent->getHtml();
+		if( $parent->parent )
+			$this->updateParentsHtml( $parent->parent );
+	}
+
+	function html( $html = '' ) {
+		if( $html ) {
+			$p = new Parser( $html );
+			$childs = $p->find();
+			$this->childrens = $childs;
+			$this->html = $this->getHtml();
+			$this->updateParentsHtml( $this->parent );
+			return $this;
+		}
+
+		return $this->html;
+	}
+
+	function getHtml() {
 		return $this->concatHtmls( $this->childrens );
 	}
 
