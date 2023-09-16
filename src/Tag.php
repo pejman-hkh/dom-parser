@@ -97,7 +97,7 @@ class Tag {
 	private function concatHtmls( $childrens ) {
 		$html = '';
 		if( @$childrens ) foreach( $childrens as $child ) {
-			if( @$child->tag == 'empty' )
+			if( @$child->tag == 'empty' || $child->tag == 'cdata' )
 				$html .= $child->content;
 			else {
 				$ct = '';
@@ -124,7 +124,7 @@ class Tag {
 			foreach( $childs as $child ) {
 				$child->parent = $this;
 			}
-			
+
 			$this->html = $this->getHtml();
 			$this->updateParentsHtml( $this->parent );
 			return $this;
