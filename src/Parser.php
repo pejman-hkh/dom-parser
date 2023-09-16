@@ -273,6 +273,7 @@ class Parser {
 		$document = new Tag;
 		$document->tag = 'document';
 		$document->childrens = $this->parse( $document );
+		$document->html = $document->getHtml();
 		$this->document = $document;
 	}
 }
