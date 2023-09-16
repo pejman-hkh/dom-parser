@@ -58,8 +58,15 @@ $element->outerHtml();
 
 
 //remove element
-$p->find(".test", 0)->remove();
-var_dump( $p->find(".test") );
+$element->remove();
+
+//update html
+$element->html('ddd');
+
+//get html
+$element->html();
+$element->html;
+
 
 ```
 
