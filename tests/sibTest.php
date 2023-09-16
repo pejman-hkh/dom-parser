@@ -38,4 +38,13 @@ final class sibTest extends TestCase
         $document = $this->document;
         $this->assertSame( 'aa', $document->find(".test span",0)->next->prev->class );
     }
+
+    public function testOnHtmlChange()
+    {
+        $p = new \Pejman\DomParser\Parser( '<div class="test"><span class="aa">innnerssss</span></div>');
+
+        $p->document->find(".aa",0)->html('<span class="cc"></span>');
+
+        $this->assertSame( 'aa', $p->find(".cc",0)->parent->class );
+    }
 }
