@@ -1,0 +1,664 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet title="XSL_formatting" type="text/xsl" href="/shared/bsp/xsl/rss/nolsol.xsl"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+    <channel>
+        <title><![CDATA[BBC News - Stories]]></title>
+        <description><![CDATA[BBC News - Stories]]></description>
+        <link>https://www.bbc.co.uk/news/</link>
+        <image>
+            <url>https://news.bbcimg.co.uk/nol/shared/img/bbc_news_120x60.gif</url>
+            <title>BBC News - Stories</title>
+            <link>https://www.bbc.co.uk/news/</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 16 Sep 2023 15:56:07 GMT</lastBuildDate>
+        <copyright><![CDATA[Copyright: (C) British Broadcasting Corporation, see http://news.bbc.co.uk/2/hi/help/rss/4498287.stm for terms and conditions of reuse.]]></copyright>
+        <language><![CDATA[en-gb]]></language>
+        <ttl>15</ttl>
+        <item>
+            <title><![CDATA[The seven-day-a-week life of a maid for Qatar's royal and rich]]></title>
+            <description><![CDATA[Maids in Qatar often work long hours without a day off, despite changes to employment law.]]></description>
+            <link>https://www.bbc.co.uk/news/world-middle-east-63851215?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-middle-east-63851215</guid>
+            <pubDate>Fri, 09 Dec 2022 22:50:09 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Holiday swindlers: The rise of digital travel scams]]></title>
+            <description><![CDATA[Social media is helping travel agents to impress clients, and sometimes to scam them.]]></description>
+            <link>https://www.bbc.co.uk/news/world-63727404?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-63727404</guid>
+            <pubDate>Thu, 24 Nov 2022 00:11:11 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Deepfaked: ‘They put my face on a porn video’]]></title>
+            <description><![CDATA[Campaigner Kate Isaacs describes the horror of seeing her face digitally edited into an adult film.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62821117?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62821117</guid>
+            <pubDate>Thu, 20 Oct 2022 23:41:45 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TikTok profits from livestreams of families begging]]></title>
+            <description><![CDATA[Children are among those pleading for hours for digital gifts, as the company takes a cut of up to 70%.]]></description>
+            <link>https://www.bbc.co.uk/news/world-63213567?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-63213567</guid>
+            <pubDate>Wed, 12 Oct 2022 00:24:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['Claims I had sexsomnia destroyed my rape case']]></title>
+            <description><![CDATA[Jade's case failed to reach court because it was suggested she may have a rare sleep disorder.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-63116989?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-63116989</guid>
+            <pubDate>Tue, 04 Oct 2022 23:32:09 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Charity research finds that only 1% of disability hate crimes end with a charge]]></title>
+            <description><![CDATA[Research by two charities finds that only 1% of disability hate crimes results in a charge]]></description>
+            <link>https://www.bbc.co.uk/news/disability-63171959?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-63171959</guid>
+            <pubDate>Fri, 07 Oct 2022 13:05:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Black, Korean and searching for the American dream]]></title>
+            <description><![CDATA[South Korean orphan Milton dreamed of making it to America, the land of his father. One day he seized his chance.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-62786001?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-us-canada-62786001</guid>
+            <pubDate>Sat, 01 Oct 2022 23:06:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Governess, Anne Hegerty, on autism, quizzing and her challenges with everyday life]]></title>
+            <description><![CDATA[The Governess, Anne Hegerty, on autism and how she finds everyday household tasks difficult.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-63089051?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-63089051</guid>
+            <pubDate>Fri, 30 Sep 2022 11:38:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[I went undercover to expose abuse at a mental health hospital]]></title>
+            <description><![CDATA[Alan Haslam spent three months on the wards - what he calls a frightening place for patients and staff.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-63061077?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-63061077</guid>
+            <pubDate>Thu, 29 Sep 2022 00:09:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hospital seclusion: ‘I’ve been treated like an animal’]]></title>
+            <description><![CDATA[A mental health hospital has traumatised a vulnerable young woman with autism, her family says.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-63049874?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-63049874</guid>
+            <pubDate>Wed, 28 Sep 2022 12:31:24 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[In her own words - Molly Russell's secret Twitter account]]></title>
+            <description><![CDATA[The schoolgirl who took her own life aged 14 had a secret Twitter account which reveals her thoughts.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62892636?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62892636</guid>
+            <pubDate>Fri, 30 Sep 2022 14:02:31 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Swapping Hong Kong for Crewe: 'We won't go back']]></title>
+            <description><![CDATA[The BBC has followed families who have moved from Hong Kong to the UK, to see if life is everything they hoped for.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62658669?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62658669</guid>
+            <pubDate>Sat, 24 Sep 2022 23:18:23 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[People smuggler: I get clients to sign a waiver]]></title>
+            <description><![CDATA[A people smuggler lifts the lid on his trade to BBC Panorama's Jane Corbin.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-62832633?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-62832633</guid>
+            <pubDate>Mon, 26 Sep 2022 13:35:54 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Iran protests: Mahsa Amini's death puts morality police under spotlight]]></title>
+            <description><![CDATA[The death of a woman detained by Iran's morality police has sparked angry protests, but who are they?]]></description>
+            <link>https://www.bbc.co.uk/news/world-middle-east-62984076?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-middle-east-62984076</guid>
+            <pubDate>Wed, 21 Sep 2022 14:34:24 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Israel: Is this an ultra-Orthodox MeToo moment?]]></title>
+            <description><![CDATA[Victims of sexual abuse within Israel's haredi community tell of their struggle to bring their abusers to justice.]]></description>
+            <link>https://www.bbc.co.uk/news/world-middle-east-62984847?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-middle-east-62984847</guid>
+            <pubDate>Thu, 22 Sep 2022 09:30:45 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Government in court for no sign language at Covid briefings]]></title>
+            <description><![CDATA[Campaigners will find out if they are entitled to compensation for a lack of BSL provision at Covid briefings.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-63010384?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-63010384</guid>
+            <pubDate>Fri, 23 Sep 2022 13:17:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The family of six in a one-bedroom flat due to inaccessible social housing]]></title>
+            <description><![CDATA[A family of six live in a one-bedroom flat due to an inaccessible council house for their disabled son.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62851397?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62851397</guid>
+            <pubDate>Fri, 16 Sep 2022 09:20:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Disabled people fear shortage of personal assistants and the loss of independence]]></title>
+            <description><![CDATA[Baroness 'fears' disabled people could end up in care homes over lack of personal assistants.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62764550?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62764550</guid>
+            <pubDate>Fri, 02 Sep 2022 14:40:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Child assaults: ‘If the police won’t do their job, we’ll do it for them’]]></title>
+            <description><![CDATA[Mums - whose children have been attacked by teenagers - are on patrol saying police are not doing enough.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62722082?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62722082</guid>
+            <pubDate>Wed, 31 Aug 2022 18:30:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Girl raped aged 13 faces three-year wait for trial]]></title>
+            <description><![CDATA[The girl's father has described the "nightmare" of having the case postponed with just a few days' notice.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62727964?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62727964</guid>
+            <pubDate>Tue, 30 Aug 2022 23:35:11 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Direct sales: 'My dream job turned into a nightmare']]></title>
+            <description><![CDATA[A BBC investigation reveals tough working conditions and the potential exploitation of young sales agents.]]></description>
+            <link>https://www.bbc.co.uk/news/business-62466147?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/business-62466147</guid>
+            <pubDate>Mon, 22 Aug 2022 23:10:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Five countries, five meals - tackling the food inflation crisis]]></title>
+            <description><![CDATA[Around the world people are adapting to high food prices, sometimes by changing what they eat.]]></description>
+            <link>https://www.bbc.co.uk/news/world-62520673?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-62520673</guid>
+            <pubDate>Tue, 16 Aug 2022 23:45:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Lessons in heartbreak: I coach women to get over their ex]]></title>
+            <description><![CDATA[A shocking moment in a divorce court prompted Aronke Omame to switch careers and become a break-up coach.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-62506531?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-africa-62506531</guid>
+            <pubDate>Sun, 14 Aug 2022 00:50:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Salman Rushdie: Did a ‘chance’ airport meeting lead to fatwa?]]></title>
+            <description><![CDATA[Two British imams met an Iranian minister hours before the decree calling for the author’s death, was issued in 1989.]]></description>
+            <link>https://www.bbc.co.uk/news/world-62561895?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-62561895</guid>
+            <pubDate>Fri, 26 Aug 2022 23:32:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Inside the secret world of trading nudes]]></title>
+            <description><![CDATA[Women face blackmail after their details and intimate photos are shared online. The BBC unmasks a man behind one of the groups - thanks to a cigarette lighter.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62564028?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62564028</guid>
+            <pubDate>Mon, 22 Aug 2022 05:39:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Why have so many children's homes opened in Blackpool?]]></title>
+            <description><![CDATA[Councils across the country are sending vulnerable young people to children's homes in Blackpool. The approach is raising concerns.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62479564?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62479564</guid>
+            <pubDate>Thu, 11 Aug 2022 08:09:15 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Partition: My journey to the ‘place no-one spoke of’]]></title>
+            <description><![CDATA[Sparsh's family fled in terror 75 years ago - it wasn't spoken about until his grandfather agreed to talk.]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-62347457?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-asia-62347457</guid>
+            <pubDate>Fri, 05 Aug 2022 23:34:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ukraine orphanages: Children tied up and men in cots]]></title>
+            <description><![CDATA[A BBC News investigation uncovers widespread abuse of disabled children and adults in institutions.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62226636?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62226636</guid>
+            <pubDate>Tue, 26 Jul 2022 16:00:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Attitudes towards disability: 'Teenagers threatened to tip me out of my wheelchair']]></title>
+            <description><![CDATA[From physical threats to patronising comments, attitudes towards disabled people are revealed.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62263792?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62263792</guid>
+            <pubDate>Fri, 22 Jul 2022 10:25:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Turkey teeth: Are cut-price reality TV teeth worth it?]]></title>
+            <description><![CDATA[UK dentists are treating patients with complications after travelling abroad for cheap crowns.]]></description>
+            <link>https://www.bbc.co.uk/news/health-62100044?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/health-62100044</guid>
+            <pubDate>Thu, 14 Jul 2022 08:02:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Disability and the heatwave: Cooling solutions and disability as weather alert goes red]]></title>
+            <description><![CDATA[As the temperature rises what are the challenges faced by disabled people?]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62136032?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62136032</guid>
+            <pubDate>Fri, 15 Jul 2022 00:31:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sex assault victims warn about home massage dangers]]></title>
+            <description><![CDATA[The BBC has spoken to women who say they were sexually assaulted during massage treatments.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-62081247?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-62081247</guid>
+            <pubDate>Tue, 12 Jul 2022 00:34:28 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Melissa Johns: The disabled actress and the stolen intimate photos]]></title>
+            <description><![CDATA[Actress Melissa Johns reveals how she reclaimed her body after nude photos of her were leaked.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62092055?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62092055</guid>
+            <pubDate>Fri, 08 Jul 2022 11:03:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Trans rescue: A future refuge for those fleeing violence]]></title>
+            <description><![CDATA[Two trans women in Amsterdam are planning a refuge in Kenya for trans people at risk all over the world.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-61979384?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-africa-61979384</guid>
+            <pubDate>Wed, 06 Jul 2022 00:23:53 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bihar: Their son vanished - then an imposter took over for 41 years]]></title>
+            <description><![CDATA[An Indian man, pretending to be a missing son, deceived the boy's family for over four decades.]]></description>
+            <link>https://www.bbc.co.uk/news/world-asia-india-61981241?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-asia-india-61981241</guid>
+            <pubDate>Sun, 03 Jul 2022 23:17:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Disabled and LGBT: 'Dad had to carry me up the stairs to the LGBT party']]></title>
+            <description><![CDATA[As more university students identify as disabled and LGBT, UCAS hopes to improve the experience.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-62011918?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-62011918</guid>
+            <pubDate>Fri, 01 Jul 2022 13:03:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bruce S. Old: The tennis data pioneer who interrogated Nazi scientists]]></title>
+            <description><![CDATA[Bruce S. Old was a data pioneer whose early advances remain largely forgotten in today's secretive world of elite tennis analysis.]]></description>
+            <link>https://www.bbc.co.uk/sport/tennis/61840188?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/sport/tennis/61840188</guid>
+            <pubDate>Tue, 28 Jun 2022 23:01:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Kenyan elections: The woman who rallies crowds - but won't vote]]></title>
+            <description><![CDATA[Diana Mwazi is one of many young Kenyans who see elections as a way to make money, not bring change.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-61815493?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-africa-61815493</guid>
+            <pubDate>Fri, 24 Jun 2022 23:02:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How does blind comedian Chris McCausland play the HIGNFY picture round?]]></title>
+            <description><![CDATA[Comedian Chris McCausland reveals the secrets of playing the Have I Got News For You picture round.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-61924545?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-61924545</guid>
+            <pubDate>Fri, 24 Jun 2022 11:54:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[What happened when Israel sent its refugees to Rwanda]]></title>
+            <description><![CDATA[As the UK presses on with its asylum deal, refugees sent from Israel to Rwanda describe their experiences.]]></description>
+            <link>https://www.bbc.co.uk/news/world-61882542?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-61882542</guid>
+            <pubDate>Wed, 22 Jun 2022 23:17:47 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['The Russians said beatings were my re-education']]></title>
+            <description><![CDATA[Ukrainian citizens have told the BBC they were punched and electrocuted before being allowed to leave Mariupol.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-61683513?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-61683513</guid>
+            <pubDate>Thu, 16 Jun 2022 05:00:32 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mental health placements: 'No-one could visit me, no-one could bring me clean clothes']]></title>
+            <description><![CDATA[Why are hundreds of mental health patients still being sent far away from home for treatment?]]></description>
+            <link>https://www.bbc.co.uk/news/disability-61802992?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-61802992</guid>
+            <pubDate>Fri, 17 Jun 2022 08:14:04 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Operose Health: What I saw working undercover at a GP surgery]]></title>
+            <description><![CDATA[BBC Panorama reporter Jacqui Wakefield worked as a receptionist at an Operose Health GP practice.]]></description>
+            <link>https://www.bbc.co.uk/news/health-61759641?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/health-61759641</guid>
+            <pubDate>Mon, 13 Jun 2022 14:03:40 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Afghanistan women's team: They escaped the Taliban but face uncertain football future]]></title>
+            <description><![CDATA[Fati and her Afghanistan team-mates had to "fight to survive" as they escaped from the Taliban. Now they face an uncertain future.]]></description>
+            <link>https://www.bbc.co.uk/sport/football/61744830?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/sport/football/61744830</guid>
+            <pubDate>Mon, 13 Jun 2022 23:01:21 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Russian soldiers refusing to fight in Ukraine]]></title>
+            <description><![CDATA[Because of their experiences on the front line, some troops are seeking legal advice to avoid being redeployed.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-61607184?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-61607184</guid>
+            <pubDate>Thu, 02 Jun 2022 23:06:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Senegalese pop star who dared to sing about rape]]></title>
+            <description><![CDATA[After rape in Senegal was finally made a serious crime, a pop star dared to tell her own story.]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-61023659?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-africa-61023659</guid>
+            <pubDate>Sun, 29 May 2022 23:14:05 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Star Hobson: Why do these child deaths keep happening?]]></title>
+            <description><![CDATA[A review says links between child protection agencies must improve, but we've been here before - writes Alison Holt.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-61608888?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-61608888</guid>
+            <pubDate>Sat, 28 May 2022 00:11:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sabotage and pistols - was Ellen Willmott gardening's ‘bad girl’?]]></title>
+            <description><![CDATA[History has portrayed horticulturalist Ellen Willmott as a rude saboteur - but new evidence suggests otherwise.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-61388646?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-61388646</guid>
+            <pubDate>Sat, 28 May 2022 00:15:02 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Grenfell fire and PEEPs: 'I want to escape a burning building, not sit and wait']]></title>
+            <description><![CDATA[Disabled residents on the fear of being trapped in high-rise flats as evacuation plans are turned down]]></description>
+            <link>https://www.bbc.co.uk/news/disability-61566282?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-61566282</guid>
+            <pubDate>Fri, 27 May 2022 11:45:34 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The 22-year-old 3D-printing schools]]></title>
+            <description><![CDATA[Maggie Grout has started an NGO that will 3D-print schools where access to education is not guaranteed.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-61588608?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/technology-61588608</guid>
+            <pubDate>Thu, 26 May 2022 23:01:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mark Billington: 'We're determined to find out who killed our son']]></title>
+            <description><![CDATA[Mark Billington disappeared after going to fly a kite - almost 38 years on, his family want the truth.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-birmingham-61435861?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-england-birmingham-61435861</guid>
+            <pubDate>Thu, 19 May 2022 05:13:19 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[‘I’m a Rasta, I’m British, I’m an officer and a commando’]]></title>
+            <description><![CDATA[Capt Kidane Cousland is helping ensure Rastafarians can express their faith while serving in the military.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-61496548?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-61496548</guid>
+            <pubDate>Sun, 22 May 2022 00:01:20 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['My first court case: Prosecuting my father's killers']]></title>
+            <description><![CDATA[Shagufta Ahmed's first job was to get justice for her father, a lecturer murdered after he blew the whistle on a colleague.]]></description>
+            <link>https://www.bbc.co.uk/news/world-south-asia-61507258?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-south-asia-61507258</guid>
+            <pubDate>Sun, 22 May 2022 00:03:17 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Frank Gardner: 'It happened again' - Why are wheelchair-users left on planes?]]></title>
+            <description><![CDATA[As the BBC's Frank Gardner is left on a plane waiting for his wheelchair, why does it keep happening?]]></description>
+            <link>https://www.bbc.co.uk/news/disability-61497830?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-61497830</guid>
+            <pubDate>Fri, 20 May 2022 12:28:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A tale of two femicides - and media bias]]></title>
+            <description><![CDATA[The media covers some murders less than others, but crimes of femicide may at least soon be counted more accurately.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-60648239?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-60648239</guid>
+            <pubDate>Sun, 15 May 2022 23:46:48 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['I searched for my sister for 30 years, but Covid took her from me']]></title>
+            <description><![CDATA[As a child Steve Ellis uncovered a family secret, 60 years later it led to an unexpected friendship.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-61179504?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-61179504</guid>
+            <pubDate>Sun, 15 May 2022 01:42:50 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA["There is a mental health crisis with or without corona"]]></title>
+            <description><![CDATA["There is a mental health crisis with or without corona, especially among young people"]]></description>
+            <link>https://www.bbc.co.uk/news/stories-55326874?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-55326874</guid>
+            <pubDate>Wed, 16 Dec 2020 07:21:40 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Dog theft: Organised crime driving ‘epidemic’ of dog snatching]]></title>
+            <description><![CDATA[Dog theft: Organised crime driving ‘epidemic’ of dog snatching.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-55356211?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-55356211</guid>
+            <pubDate>Thu, 17 Dec 2020 21:22:43 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[South Asian diaspora recall gnawing loneliness in post-war Britain]]></title>
+            <description><![CDATA[How the first South Asians who moved to Britain coped far away from their homeland.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-60988410?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-60988410</guid>
+            <pubDate>Sat, 09 Apr 2022 23:23:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The guitarist who saved hundreds of people on a sinking cruise liner]]></title>
+            <description><![CDATA[Guitarist Moss Hills helped evacuate a sinking cruise liner after some of the crew jumped ship]]></description>
+            <link>https://www.bbc.co.uk/news/world-africa-60841291?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-africa-60841291</guid>
+            <pubDate>Tue, 05 Apr 2022 23:29:40 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A Ukrainian man has to choose between his family and his country]]></title>
+            <description><![CDATA[A Ukrainian man has to choose between his family and his country.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-60996098?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-60996098</guid>
+            <pubDate>Tue, 05 Apr 2022 23:01:16 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[UK farmers call for weedkiller ban over Parkinson’s fears]]></title>
+            <description><![CDATA[Some farmers say studies suggest Paraquat could be a factor in the onset of Parkinson's Disease.]]></description>
+            <link>https://www.bbc.co.uk/news/science-environment-60836892?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/science-environment-60836892</guid>
+            <pubDate>Fri, 01 Apr 2022 00:06:38 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Growing up around land-mines: How the Falklands conflict shaped me]]></title>
+            <description><![CDATA[The British overseas territory was invaded 40 years ago, beginning a short but bitter conflict.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-london-60933534?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-england-london-60933534</guid>
+            <pubDate>Sat, 02 Apr 2022 08:50:27 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The ‘real outlier’ in the crossword puzzle-making community]]></title>
+            <description><![CDATA[Anna Shechtman is determined to make the crossword puzzle scene more diverse, but has also had to deal with her own anorexia.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-60902128?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-60902128</guid>
+            <pubDate>Sun, 03 Apr 2022 00:26:46 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Refugees in Wales: 'Thank God I came here after our home was bombed']]></title>
+            <description><![CDATA[The family house was destroyed and they lived in a tent but now they've settled in rural Wales.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-wales-60820974?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-wales-60820974</guid>
+            <pubDate>Thu, 24 Mar 2022 10:10:39 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Ukraine: Impossible choices for surrogate mothers and parents]]></title>
+            <description><![CDATA[Hundreds of Ukrainian women are pregnant with other people's children - creating a web of complex problems.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-60824936?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-60824936</guid>
+            <pubDate>Tue, 22 Mar 2022 00:32:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The lonely funeral of a young soldier in Ukraine]]></title>
+            <description><![CDATA[As Dmytro Kotenko was laid to rest, his parents were 600 miles away, trapped under Russian bombs.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-60801586?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-60801586</guid>
+            <pubDate>Mon, 21 Mar 2022 00:32:12 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Nazanin Zaghari-Ratcliffe's release: 'Richard showed us what love really means']]></title>
+            <description><![CDATA[How the bond between Nazanin Zaghari-Ratcliffe and her family helped them endure the darkest of times.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-60799708?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-60799708</guid>
+            <pubDate>Sat, 19 Mar 2022 00:15:01 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How modern slavery victim went from homelessness to 'amazing' job]]></title>
+            <description><![CDATA[After years of being homeless, Will teamed up with a charity who helped him into employment.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-birmingham-60244201?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-england-birmingham-60244201</guid>
+            <pubDate>Sun, 20 Mar 2022 00:36:33 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hidilyn Diaz: From accusations of anti-government plot to historic Olympic gold]]></title>
+            <description><![CDATA[Hidilyn Diaz was accused of plotting against the Philippine government. Then she won her country's first Olympic gold.]]></description>
+            <link>https://www.bbc.co.uk/sport/weightlifting/59660304?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/sport/weightlifting/59660304</guid>
+            <pubDate>Wed, 16 Mar 2022 23:59:47 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Martin Compston: Plucked to stardom from a school corridor]]></title>
+            <description><![CDATA[The Scot made his acting debut in Ken Loach's gritty drama Sweet Sixteen, released 20 years ago.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-scotland-60707536?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-scotland-60707536</guid>
+            <pubDate>Sat, 12 Mar 2022 10:20:56 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Exempt housing: 'Living on the street is often better than this']]></title>
+            <description><![CDATA[Two former support workers tell the BBC drugs and crime are rife in exempt housing.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-birmingham-60575193?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-england-birmingham-60575193</guid>
+            <pubDate>Thu, 10 Mar 2022 11:21:35 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Winter Paralympics: 'I chose to have my leg amputated after years of pain']]></title>
+            <description><![CDATA[Musician Shona chose to have her leg amputated after years of pain - now she's a Paralympian.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-60642118?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-60642118</guid>
+            <pubDate>Thu, 10 Mar 2022 01:16:37 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Was moral campaigner Mary Whitehouse ahead of her time?]]></title>
+            <description><![CDATA[Samira Ahmed assesses the legacy of decency campaigner, whose name became a byword for prudery and censorship.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-60556060?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-60556060</guid>
+            <pubDate>Sat, 05 Mar 2022 00:39:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The new wave of India's female Para-athletes forcing a shift in perspective]]></title>
+            <description><![CDATA[A new wave of Indian female Para-athletes are enjoying international success and forcing a change in attitudes in their home country.]]></description>
+            <link>https://www.bbc.co.uk/sport/disability-sport/60508602?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/sport/disability-sport/60508602</guid>
+            <pubDate>Tue, 01 Mar 2022 00:01:31 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bibian Mentel-Spee: The life and legacy of a Paralympic legend]]></title>
+            <description><![CDATA[Bibian Mentel-Spee died aged 48 in March 2021. Her achievements mean she will be remembered for many years to come.]]></description>
+            <link>https://www.bbc.co.uk/sport/disability-sport/60508601?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/sport/disability-sport/60508601</guid>
+            <pubDate>Thu, 03 Mar 2022 00:00:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['We were split up from our siblings when we went into care']]></title>
+            <description><![CDATA[Readers share their experiences of being separated from siblings in the care system]]></description>
+            <link>https://www.bbc.co.uk/news/uk-60491891?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-60491891</guid>
+            <pubDate>Sun, 27 Feb 2022 00:34:36 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Winter Paralympics: The lowdown on being disabled in China]]></title>
+            <description><![CDATA[From an outrageous poet to an "atmosphere of fear", get the lowdown on disabled life in China.]]></description>
+            <link>https://www.bbc.co.uk/news/disability-60539739?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/disability-60539739</guid>
+            <pubDate>Fri, 04 Mar 2022 00:37:50 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Mothers who helped uncover the biggest NHS maternity scandal]]></title>
+            <description><![CDATA[Next month, a report will be published into one of the biggest scandals in the history of the NHS - why were so many failures allowed to happen?]]></description>
+            <link>https://www.bbc.co.uk/news/health-60434299?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/health-60434299</guid>
+            <pubDate>Wed, 23 Feb 2022 03:36:15 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jobfished: the con that tricked dozens into working for a fake design agency]]></title>
+            <description><![CDATA[Dozens of young people were tricked into thinking they were working for a glamorous UK design agency - which didn’t really exist.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-60387324?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-60387324</guid>
+            <pubDate>Mon, 21 Feb 2022 03:18:08 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Bethany Vincent: How mum tried to escape her murdering ex]]></title>
+            <description><![CDATA[Bethany Vincent was murdered by violent and possessive Daniel Boulton. Could he have been stopped?]]></description>
+            <link>https://www.bbc.co.uk/news/uk-england-lincolnshire-60175235?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-england-lincolnshire-60175235</guid>
+            <pubDate>Wed, 02 Feb 2022 18:08:31 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[‘Hackers helped me find my lost Bitcoin fortune’]]></title>
+            <description><![CDATA[It's estimated that 3.7 million Bitcoin have been lost - but hackers are helping owners get some of them back.]]></description>
+            <link>https://www.bbc.co.uk/news/technology-60318946?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/technology-60318946</guid>
+            <pubDate>Thu, 10 Feb 2022 02:11:42 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Gabby Logan's heart screening call for brother Daniel]]></title>
+            <description><![CDATA[The "catastrophic" impact of losing Daniel when he was 15 is behind the presenter's appeal.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-wales-60140726?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-wales-60140726</guid>
+            <pubDate>Thu, 03 Feb 2022 13:43:50 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[‘I feel like me again’ - troubled Army vets are helping fix driver shortage]]></title>
+            <description><![CDATA[Some UK veterans can face difficulties finding work after returning to civilian life, but one ex-soldier wants to help them get back in the driving seat.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-60140431?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-60140431</guid>
+            <pubDate>Sun, 30 Jan 2022 01:24:51 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sex trafficking: Children groomed in Romania sent to UK]]></title>
+            <description><![CDATA[BBC correspondent Jean Mackenzie finds children as young as 10 are being groomed in Romania, to be trafficked to the UK.]]></description>
+            <link>https://www.bbc.co.uk/news/world-europe-60091717?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-europe-60091717</guid>
+            <pubDate>Mon, 24 Jan 2022 00:02:46 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Finding love as a trans woman]]></title>
+            <description><![CDATA[Trans woman Daniella McDonald had bad experiences dating men until she met Josh - but thinks attitudes are slowly changing.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-60086567?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-us-canada-60086567</guid>
+            <pubDate>Sun, 23 Jan 2022 00:57:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[‘Hi, thanks for calling. Are you OK? How far away are you?’]]></title>
+            <description><![CDATA[A telephone helpline launched in Edinburgh is keeping people company when they walk home alone.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-60055916?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-60055916</guid>
+            <pubDate>Sat, 22 Jan 2022 00:56:25 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA['As a black woman in STEM I'm used for photo opportunities']]></title>
+            <description><![CDATA[Chemist Cynthia Chapple talks about how to get more black girls from inner-cities into STEM careers.]]></description>
+            <link>https://www.bbc.co.uk/news/business-59897898?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/business-59897898</guid>
+            <pubDate>Fri, 14 Jan 2022 00:17:22 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Capitol riot anniversary: What QAnon followers believe now]]></title>
+            <description><![CDATA[Shedding a light on the followers of the QAnon conspiracy theory one year since the US Capitol riots.]]></description>
+            <link>https://www.bbc.co.uk/news/world-us-canada-59888867?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/world-us-canada-59888867</guid>
+            <pubDate>Thu, 06 Jan 2022 03:19:57 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[In the footsteps of the women who escaped a Nazi death march]]></title>
+            <description><![CDATA[When Gwen Strauss' great-aunt revealed she had led nine women in an escape from a Nazi death march in 1945, Gwen decided to retrace their steps.]]></description>
+            <link>https://www.bbc.co.uk/news/stories-59566983?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-59566983</guid>
+            <pubDate>Sun, 02 Jan 2022 00:55:01 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[‘The doctors came and I had to tell my father he was dying’]]></title>
+            <description><![CDATA[Is it always appropriate for relatives to interpret for deaf loved ones?]]></description>
+            <link>https://www.bbc.co.uk/news/stories-59733533?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/stories-59733533</guid>
+            <pubDate>Tue, 28 Dec 2021 00:04:46 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sex and the pandemic: How did young people cope with lockdown celibacy?]]></title>
+            <description><![CDATA[Three young women discuss how lockdown affected their sex lives, as a study of sexual behaviour during lockdown is published.]]></description>
+            <link>https://www.bbc.co.uk/news/uk-59690154?at_medium=RSS&amp;at_campaign=KARANGA</link>
+            <guid isPermaLink="false">https://www.bbc.co.uk/news/uk-59690154</guid>
+            <pubDate>Fri, 17 Dec 2021 00:03:47 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
