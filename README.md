@@ -2,8 +2,9 @@
 Fast php HTML DOM parser
 - All php version work properly without extension
 - No need php extension
-- No Regex use
+- No Regex used
 - Can embed to another languages like js
+- Can load xml file like html
 
 # Install :
 ```
