@@ -209,11 +209,33 @@ class Parser {
 		return $content;
 	}
 
+	function parseCData() {
+		$content = '';
+		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+			if( $c1 == ']' ) {
+				if( $this->isEqual(']>') ) {
+					break;
+				}
+			}
+
+			$content .= $c1;
+		}
+	
+		$this->i+= 2;
+		return $content;
+	}
+
 	function getTag() {
 
 		$tag = $this->next();
 		if( ! @$tag )
 			return;
+		if( $tag->tag == 'cdata' ) {
+			$tag->content = $this->parseCData();
+			return $tag;
+		}
+
+		if( substr($tag->tag,0,4) == '?xml' ) return $tag;
 
 		if( in_array( @$tag->tag, ['comment', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'] ) ) return $tag;
 
