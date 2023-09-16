@@ -14,9 +14,8 @@ composer require pejman/dom-parser
 
 in this project I haven't used Regex, I just parsed with pure php
 
-Yet I'm working on it
 
-Now we can find in html with class and id and attributes
+# Usage :
 
 ```php
 $element = $p->find(".test",0);
