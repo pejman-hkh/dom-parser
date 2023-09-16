@@ -5,7 +5,7 @@ final class FindTest extends TestCase
 {
 
     protected function setUp(): void {
-        $p = new \Pejman\DomParser\Parser( '<div><div class="test">ss<span class="aa">innnerssss</span><span class="aa">innnnn</span></div></div><div class="test1">eee</div>');
+        $p = new \Pejman\DomParser\Parser( '<div><div class="test">ss<span class="aa">innnerssss</span><span class="bb">innnnn</span></div></div><div class="test1">eee</div>');
         $this->element = $p->document;
     }
 
@@ -17,5 +17,15 @@ final class FindTest extends TestCase
             $cls[] = $childs->class;
         }
         $this->assertSame( ['test','test1'], $cls);
+    }
+
+    public function testFindChildren()
+    {
+        $element = $this->element;
+        $cls = [];
+        foreach( $element->find(".test span") as $childs ) {
+            $cls[] = $childs->class;
+        }
+        $this->assertSame( ['aa','bb'], $cls);
     }
 }
