@@ -64,6 +64,14 @@ class Parser {
 	}
 
 	function ParseTag() {
+		if( $this->isEqual('![CDATA[') ) {
+			$this->i+= 8;
+
+			$tag = new Tag;
+			$tag->tag = 'cdata';							
+			return $tag;
+		}
+
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$tag = '';
