@@ -1,2 +1,4 @@
 /tests              export-ignore
 /examples       export-ignore
+test.sh       export-ignore
+README.md       export-ignore
