@@ -59,6 +59,7 @@ class Parser {
 			$attr .= $c1;
 		}
 
+		$attrs->makeClassList();
 		return $attrs;
 	}
 
