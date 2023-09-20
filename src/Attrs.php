@@ -2,9 +2,23 @@
 namespace Pejman\DomParser;
 
 class Attrs {
-	function classes() {
-		return explode(" ", @$this->class);
+
+	public $classList = [];
+	function __construct() {
+		
 	}
+
+	function classes() {
+		if( !empty( $this->class ) )
+			return explode(" ", @$this->class);
+		else
+			return [];
+	}
+
+	function makeClassList() {
+		$this->classList = $this->classes();	
+	}
+
 
 	function set( $key, $value ) {
 		$this->$key = $value;
@@ -14,12 +28,33 @@ class Attrs {
 		return $this->$key;
 	}
 
+	function addClass( $class ) {
+		if( $class && ! in_array( $class, $this->classList ) )
+			$this->classList[] = $class;
+	}
+
+	function removeClass( $class ) {
+		foreach( $this->classList as $k => $cls ) {
+			if( $cls == $class )
+				unset( $this->classList[ $k ] );
+		}
+	}
+
+	function getClass() {
+		return implode(" ", $this->classList );
+	}
+
 	function makeAttrsText() {
+		$this->class = $this->getClass(); 
+
 		$ret = '';
 		$pre = '';
+
 		foreach( $this as $attr => $value ) {
-			$ret .= $pre.$attr.'="'.$value.'"';
-			$pre = ' ';
+			if( is_string( $value ) ) {
+				$ret .= $pre.$attr.'="'.$value.'"';
+				$pre = ' ';
+			}
 		}
 		return $ret;
 	}
