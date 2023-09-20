@@ -52,6 +52,9 @@ class Attrs {
 
 		foreach( $this as $attr => $value ) {
 			if( is_string( $value ) ) {
+				if( $attr == 'class' && ! $value )
+					continue;
+				
 				$ret .= $pre.$attr.'="'.$value.'"';
 				$pre = ' ';
 			}
