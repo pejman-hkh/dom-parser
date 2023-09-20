@@ -6,13 +6,19 @@ function removeFromObject( &$object ) {
 			removeFromObject( $o );
 		}
 	} else {
-		if( $object->childrens )
+		if( @$object->childrens )
 			removeFromObject( $object->childrens );
 		$object->next = 'Next';
 		$object->prev = 'Prev';
 		$object->parent = 'Parent';
 	}
 	return $object;
+}
+
+if( ! function_exists('pq') ) {
+	function pq( $selector ) {
+	    return new \Pejman\DomParser\PQuery( $selector );
+	}
 }
 
 if( ! function_exists('dump') ) {
