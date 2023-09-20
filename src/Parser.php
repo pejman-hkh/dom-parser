@@ -312,6 +312,7 @@ class Parser {
 		$document->tag = 'document';
 		$document->childrens = $this->parse( $document );
 		$document->html = $document->getHtml();
+		\Pejman\DomParser\PQuery::$document = $document;
 		$this->document = $document;
 	}
 }
