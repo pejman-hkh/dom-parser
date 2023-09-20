@@ -74,7 +74,7 @@ $element->html();
 $element->html;
 ```
 
-# PQeury Like JQuery :
+# PQuery Like JQuery :
 
 ```php
 <?php
