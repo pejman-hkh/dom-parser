@@ -20,6 +20,24 @@ class PQuery {
         return $this;
     }
 
+    function outerHtml() {
+        return $this->elements[0]->outerHtml();
+    }
+
+    function addClass( $cls = '' ) {
+        return $this->each(function( $element ) use( $cls ) {
+            if( $element->attrs )
+                $element->attrs->addClass( $cls );
+        });
+    }
+
+    function removeClass( $cls ) {
+        return $this->each(function( $element ) use( $cls ) {
+            if( $element->attrs )
+                $element->attrs->removeClass( $cls );
+        });
+    }
+
     function html( $html = '' ) {
         if( ! $html )
             return $this->elements[0]->html;
