@@ -5,6 +5,7 @@ Fast php HTML DOM parser
 - No Regex used
 - Can embed to another languages like js
 - Can load xml file like html
+- PQuery like JQuery
 
 # Install :
 ```
