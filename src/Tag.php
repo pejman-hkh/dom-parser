@@ -73,8 +73,7 @@ class Tag {
 	}
 	
 	function getAttribute( $name ) {
-		$this->attrs->get( $name );
-		return $this;
+		return $this->attrs->get( $name );
 	}
 
 	function parent() {
