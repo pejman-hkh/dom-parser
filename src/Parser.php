@@ -112,13 +112,14 @@ class Parser {
 		$this->i--;
 		$content = '';
 		while( ! $this->empty( $c1 = $this->nextTok() )  ) {
+
 			if( $c1 == '<' ) {
 				break;
 			}
 			$content .= $c1;
 		}
-		$this->i--;
 
+		$this->i--;
 		$tag = new Tag;
 		$tag->tag = 'empty';
 		$tag->content = $content;
