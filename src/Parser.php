@@ -226,7 +226,7 @@ class Parser {
 	}
 
 	protected $isXml = false;
-	protected 	$hasNoEndTags = ['comment', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
+	public static 	$hasNoEndTags = ['comment', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
 
 	function getTag() {
 
@@ -240,12 +240,13 @@ class Parser {
 
 		if( substr($tag->tag,0,4) == '?xml' ) { $this->isXml = true; return $tag; }
 
-	
+		$hasNoEndTags = self::$hasNoEndTags;
+
 		if( $this->isXml ) {
-			unset( $this->hasNoEndTags[11] );
+			unset( $hasNoEndTags[11] );
 		}
 
-		if( in_array( @$tag->tag, $this->hasNoEndTags ) ) return $tag;
+		if( in_array( @$tag->tag, $hasNoEndTags ) ) return $tag;
 
 		if( @$tag->isEnd ) return $tag;
 
