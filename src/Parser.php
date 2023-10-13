@@ -139,9 +139,10 @@ class Parser {
 		$this->i += 3;
 		$content = '';
 		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
-
-			if( $c1 == '-' && $this->html[ $this->i] == '-' &&  $this->html[ $this->i+1] == '>' ) 
+			if( $this->isEqual('-->') ) 
 				break;
+			//if( $c1 == '-' && $this->html[ $this->i] == '-' &&  $this->html[ $this->i+1] == '>' ) 
+			//	break;
 
 			$content .= $c1;
 		}
@@ -154,13 +155,36 @@ class Parser {
 		return $tag;
 	}
 
+	function parsePhp() {
+
+		$this->i += 1;
+		$content = '';
+		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+			if( $this->isEqual('?>') ) 
+				break;
+
+			$content .= $c1;
+		}
+		$this->i += 2;
+
+		$tag = new Tag;
+		$tag->tag = 'php';
+		$tag->content = $content;
+
+		return $tag;		
+	}
+
 	function next1() {
 		$c = @$this->html[$this->i++];
 		if( ! $c ) return ;
 	
 		if( $c == '<') {
-			if( $this->html[ $this->i ] == '!' && $this->html[ $this->i+1 ] == '-' && $this->html[ $this->i+2 ] == '-' )
+			if( $this->isEqual('!--') )
 				return $this->parseComment();
+
+			if( $this->isEqual('?') )
+				return $this->parsePhp();
+
 
 			if(  $this->html[ $this->i ] == ' ' ) {
 				$this->i++;
@@ -226,7 +250,7 @@ class Parser {
 	}
 
 	protected $isXml = false;
-	public static 	$hasNoEndTags = ['comment', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
+	public static 	$hasNoEndTags = ['comment', 'php', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
 
 	function getTag() {
 
