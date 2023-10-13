@@ -90,7 +90,17 @@ class Tag {
 	}
 
 	function makeHtml( $tag, $content ) {
-		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.$content.'</'.$tag->tag.'>';
+		if( $tag->tag == 'script' ) {
+			return '<script'.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.$tag->content.'</script>';
+		} else if( $tag->tag == 'comment' ) {
+			//return '<!--'.$tag->content.'-->';
+			return;
+		}
+
+		if( in_array( $tag->tag, Parser::$hasNoEndTags ) ) {
+			return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').' />';
+		}
+		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.trim($content).'</'.$tag->tag.'>';
 	}
 
 	private function concatHtmls( $childrens ) {
