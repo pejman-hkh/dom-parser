@@ -176,8 +176,8 @@ class Parser {
 
 	function next1() {
 		$c = @$this->html[$this->i++];
-		if( ! $c ) return ;
-	
+		if( $this->empty( $c ) ) return ;
+		
 		if( $c == '<') {
 			if( $this->isEqual('!--') )
 				return $this->parseComment();
