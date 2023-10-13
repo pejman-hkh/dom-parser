@@ -19,7 +19,7 @@ class Attrs {
 		$this->classList = $this->classes();	
 	}
 
-
+	
 	function set( $key, $value ) {
 		$this->$key = $value;
 	}
