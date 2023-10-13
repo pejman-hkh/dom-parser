@@ -102,7 +102,7 @@ class Tag {
 			return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').' />';
 		}
 		
-		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.trim($content).'</'.$tag->tag.'>';
+		return '<'.$tag->tag.(@$tag->attrs?' '.$tag->attrs->makeAttrsText():'').'>'.($content).'</'.$tag->tag.'>';
 	}
 
 	private function concatHtmls( $childrens ) {
