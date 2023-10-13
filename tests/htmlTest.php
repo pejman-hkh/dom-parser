@@ -37,4 +37,9 @@ final class HtmlTest extends TestCase
         $test = $document->find(".test", 0)->remove();
         $this->assertSame( '<div id="first"></div><div class="test1">eee</div>', $document->html );
     }
+
+    function testZeroContent() {
+        $p = new \Pejman\DomParser\Parser('009');
+        $this->assertSame( '009', $p->document->html );
+    }
 }
