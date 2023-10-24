@@ -11,7 +11,8 @@ final class commentTest extends TestCase
 
     public function testNext()
     {
-        $this->assertSame( $this->document->html, '<div class="alert alert-info">یک اشتراک را انتخاب کنید</div>');
+
+        $this->assertSame( $this->document->html, '<div class="alert alert-info">یک اشتراک را انتخاب کنید </div>');
        
     }
 

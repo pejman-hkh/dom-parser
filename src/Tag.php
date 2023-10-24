@@ -7,6 +7,10 @@ class Tag {
 	}
 
 	function __get( $key ) {
+		if( method_exists( $this, 'get'.$key ) ) {
+			return $this->{'get'.$key}();
+		}
+
 		if( @$this->attrs->$key )
 			return $this->attrs->$key;
 		return @$this->$key;
@@ -122,9 +126,13 @@ class Tag {
 	}	
 
 	function updateParentsHtml( $parent ) {
-		$parent->html = $parent->getHtml();
+		$parent->html = $parent->getHtml1();
 		if( $parent->parent )
 			$this->updateParentsHtml( $parent->parent );
+	}
+
+	function getHtml() {
+		return $this->html();
 	}
 
 	function html( $html = '' ) {
@@ -136,15 +144,15 @@ class Tag {
 				$child->parent = $this;
 			}
 
-			$this->html = $this->getHtml();
+			$this->html = $this->getHtml1();
 			$this->updateParentsHtml( $this->parent );
 			return $this;
 		}
 
-		return $this->html;
+		return $this->getHtml1();
 	}
 
-	function getHtml() {
+	function getHtml1() {
 		return $this->concatHtmls( $this->childrens );
 	}
 

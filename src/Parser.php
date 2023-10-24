@@ -183,8 +183,8 @@ class Parser {
 			if( $this->isEqual('!--') )
 				return $this->parseComment();
 
-			if( $this->isEqual('?') )
-				return $this->parsePhp();
+			//if( $this->isEqual('?') )
+				//return $this->parsePhp();
 
 
 			if(  $this->html[ $this->i ] == ' ' ) {
@@ -313,7 +313,7 @@ class Parser {
 				$tag->prev = $stag;
 				$tag->parent = $parent;
 				$stag->next = $tag;
-				$tag->html = $tag->getHtml();
+				//$tag->html = $tag->getHtml();
 				$tags[] = $tag;
 			}
 
@@ -337,7 +337,7 @@ class Parser {
 		$document = new Tag;
 		$document->tag = 'document';
 		$document->childrens = $this->parse( $document );
-		$document->html = $document->getHtml();
+		//$document->html = $document->getHtml();
 		\Pejman\DomParser\PQuery::$document = $document;
 		$this->document = $document;
 	}
