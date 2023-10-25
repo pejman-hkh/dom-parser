@@ -7,19 +7,16 @@ class Tag {
 	}
 
 	function __get( $key ) {
-		if( method_exists( $this, 'get'.$key ) ) {
-			return $this->{'get'.$key}();
-		}
+		if( $key == 'html' )
+			return $this->getHtml();
 
-		if( @$this->attrs->$key )
+		if( isset($this->attrs->$key) )
 			return $this->attrs->$key;
+
 		return @$this->$key;
 	}
 
 	function __set( $key, $value ) {
-
-		if( @$this->attrs->$key )
-			$this->attr($key, $value);
 
 		$this->$key = $value;
 	}
@@ -31,7 +28,6 @@ class Tag {
 
 	function remove() {
 		unset( $this->parent->childrens[ $this->eq ] );
-		$this->updateParentsHtml( $this->parent );
 	}
 
 	private function notEmpty() {
@@ -127,7 +123,7 @@ class Tag {
 
 	function updateParentsHtml( $parent ) {
 		$parent->html = $parent->getHtml1();
-		if( $parent->parent )
+		if( isset($parent->parent) )
 			$this->updateParentsHtml( $parent->parent );
 	}
 
@@ -167,10 +163,10 @@ class Tag {
 	private function concatTexts( $childrens ) {
 		$html = '';
 		foreach( $childrens as $child ) {
-			if( @$child->content )
+			if( isset($child->content) )
 				$html .= $child->content;
 			
-			if( @$child->childrens ){
+			if( isset($child->childrens) ){
 				if( $t = $this->concatTexts( $child->childrens ) )
 					$html .= $t;
 			}

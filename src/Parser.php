@@ -75,7 +75,7 @@ class Parser {
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$tag = '';
-		while( $c1 = @$this->html[ $this->i++ ] ) {
+		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
 
 			if( $c1 == '>') {
 				break;
@@ -93,7 +93,7 @@ class Parser {
 		$ret = new Tag;
 		$ret->tag = $tag;
 	
-		if( @$attrs )
+		if( isset($attrs) )
 			$ret->attrs = @$attrs; 
 
 		if( substr($tag,0,1) == '/' ) {
@@ -142,8 +142,6 @@ class Parser {
 		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
 			if( $this->isEqual('-->') ) 
 				break;
-			//if( $c1 == '-' && $this->html[ $this->i] == '-' &&  $this->html[ $this->i+1] == '>' ) 
-			//	break;
 
 			$content .= $c1;
 		}
@@ -182,10 +180,6 @@ class Parser {
 		if( $c == '<') {
 			if( $this->isEqual('!--') )
 				return $this->parseComment();
-
-			//if( $this->isEqual('?') )
-				//return $this->parsePhp();
-
 
 			if(  $this->html[ $this->i ] == ' ' ) {
 				$this->i++;
@@ -256,8 +250,9 @@ class Parser {
 	function getTag() {
 
 		$tag = $this->next();
-		if( ! @$tag )
+		if( ! isset($tag) )
 			return;
+
 		if( $tag->tag == 'cdata' ) {
 			$tag->content = $this->parseCData();
 			return $tag;
@@ -273,7 +268,7 @@ class Parser {
 
 		if( in_array( @$tag->tag, $hasNoEndTags ) ) return $tag;
 
-		if( @$tag->isEnd ) return $tag;
+		if( isset($tag->isEnd) ) return $tag;
 
 		if( $tag->tag == 'script' ) {
 			$content = $this->parseScriptInner();
@@ -284,12 +279,12 @@ class Parser {
 				$tag->childrens = $childrens;			
 		}
 
-		if( @$tag->tag == @$this->current->tag ) {
+		if( isset( $tag->tag ) && @$tag->tag == @$this->current->tag ) {
 			return $tag;
 		}
 
 		while( $etag = $this->next() ) {
-			if( $tag->tag == @$etag->tag )
+			if( isset( $etag->tag ) && $tag->tag == @$etag->tag )
 				break;
 		}
 
@@ -297,23 +292,21 @@ class Parser {
 	}
 
 	function parse( &$parent = '' ) {
-
 		$tags = [];
 		$stag = new Tag;
 		$eq = 0;
 		while( $tag = $this->getTag() ) {
 
-			if( @$tag->isEnd && @$parent->tag == @$tag->tag ) break;
+			if( isset($tag->isEnd) && @$parent->tag == @$tag->tag ) break;
 
-			if( @$tag->tag == 'empty' && empty( trim($tag->content) ) )
+			if( isset( $tag->tag ) && $tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
 
-			if( ! @$tag->isEnd ) {
+			if( ! isset($tag->isEnd) ) {
 				$tag->eq = $eq++;
 				$tag->prev = $stag;
 				$tag->parent = $parent;
 				$stag->next = $tag;
-				//$tag->html = $tag->getHtml();
 				$tags[] = $tag;
 			}
 
@@ -322,6 +315,7 @@ class Parser {
 
 		return $tags;
 	}
+
 
 	function find( $query = '', $index = [] ) {
 		$f = new Find();
@@ -332,13 +326,14 @@ class Parser {
 		$this->tags = [];
 		$this->html = $html;
 		$this->i = 0;
-		$this->id = 0;
-		
+
 		$document = new Tag;
 		$document->tag = 'document';
 		$document->childrens = $this->parse( $document );
-		//$document->html = $document->getHtml();
+
 		\Pejman\DomParser\PQuery::$document = $document;
 		$this->document = $document;
+		    
 	}
+
 }
