@@ -18,6 +18,9 @@ class Tag {
 
 	function __set( $key, $value ) {
 
+		if( isset($this->attrs) )
+			$this->attr($key, $value);
+
 		$this->$key = $value;
 	}
 

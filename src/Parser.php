@@ -20,9 +20,9 @@ class Parser {
 			
 				$nowAttr = $attr;
 				$attr = '';
-
-				if( $this->html[ $this->i ] == '"' || $this->html[ $this->i ] == "'" ) {
-					$t = $this->html[ $this->i ];
+				$g = $this->html[ $this->i ];
+				if( $g == '"' || $g == "'" ) {
+					$t = $g;
 					$this->i++;
 				}
 			

@@ -25,7 +25,7 @@ class Attrs {
 	}
 
 	function get( $key ) {
-		return $this->$key;
+		return @$this->$key;
 	}
 
 	function addClass( $class ) {
