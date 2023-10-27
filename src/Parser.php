@@ -108,7 +108,19 @@ class Parser {
 		return $ret;
 	}
 
+	function getUntil( $char ) {
+		$string = substr( $this->html, $this->i, strlen( $this->html ) );
+		$pos = strpos($string, $char);
+		$ret = substr( $this->html, $this->i, $pos );
+		$this->i += $pos;
+		return $ret;
+	}
+
 	function parseContents() {
+
+
+		//$content = $this->getUntil('<');
+
 		$this->i--;
 		$content = '';
 		while( ! $this->empty( $c1 = $this->nextTok() )  ) {
@@ -120,6 +132,7 @@ class Parser {
 		}
 
 		$this->i--;
+
 		$tag = new Tag;
 		$tag->tag = 'empty';
 		$tag->content = $content;
