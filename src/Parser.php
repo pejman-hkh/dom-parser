@@ -8,7 +8,11 @@ class Parser {
 		$attr = '';
 		$nowAttr = '';
 
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+		while( true ) {
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
 
 			if( $c1 == ' ' ) {
 				$attr = '';
@@ -27,7 +31,13 @@ class Parser {
 				}
 			
 				$value = '';
-				while( ! $this->empty( $c2 = $this->nextTok() ) ) {
+				while( true ) {
+
+					$c2 = $this->html[ $this->i++ ];
+					if( empty($c2 ) && $c2 != '0' ) {
+						break;
+					}
+
 					if( ! $t && $c2 == ' ') {
 						break;
 					}
@@ -64,7 +74,7 @@ class Parser {
 	}
 
 	function ParseTag() {
-		if( $this->isEqual('![CDATA[') ) {
+		if( $this->html[ $this->i ] == '!' && $this->isEqual('![CDATA[') ) {
 			$this->i+= 8;
 
 			$tag = new Tag;
@@ -75,7 +85,13 @@ class Parser {
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$tag = '';
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+		$attrs = [];
+		while( true ) {
+
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
 
 			if( $c1 == '>') {
 				break;
@@ -93,37 +109,31 @@ class Parser {
 		$ret = new Tag;
 		$ret->tag = $tag;
 	
-		if( isset($attrs) )
-			$ret->attrs = @$attrs; 
+		$ret->attrs = @$attrs; 
 
-		if( substr($tag,0,1) == '/' ) {
+		if( $tag[0] == '/' ) {
 			$ret->isEnd = true;
 			$ret->tag = substr($tag,1);
 		}
 
-		if( substr( $tag, -1) == '/' ) {
+		if( $a[strlen($a)-1] == '/' ) {
 			$ret->tag = substr( $tag, 0, -1);
 		}
 		
 		return $ret;
 	}
 
-	function getUntil( $char ) {
-		$string = substr( $this->html, $this->i, strlen( $this->html ) );
-		$pos = strpos($string, $char);
-		$ret = substr( $this->html, $this->i, $pos );
-		$this->i += $pos;
-		return $ret;
-	}
 
 	function parseContents() {
 
-
-		//$content = $this->getUntil('<');
-
 		$this->i--;
 		$content = '';
-		while( ! $this->empty( $c1 = $this->nextTok() )  ) {
+		while( true ) {
+			$c1 = $this->html[ $this->i++ ];
+
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
 
 			if( $c1 == '<' ) {
 				break;
@@ -140,20 +150,16 @@ class Parser {
 		return $tag;
 	}
 
-	function nextTok() {
-		$ret = @$this->html[ $this->i++ ];
-		return $ret;
-	}
-
-	function empty( $a ) {
-		return empty($a) && $a !== '0'; 
-	}
-
 	function parseComment() {
 		$this->i += 3;
 		$content = '';
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
-			if( $this->isEqual('-->') ) 
+		while( true ) {
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
+
+			if( $this->html[$this->i] == '-' && $this->isEqual('-->') ) 
 				break;
 
 			$content .= $c1;
@@ -171,7 +177,13 @@ class Parser {
 
 		$this->i += 1;
 		$content = '';
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+		while( true ) {
+
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
+
 			if( $this->isEqual('?>') ) 
 				break;
 
@@ -188,10 +200,10 @@ class Parser {
 
 	function next1() {
 		$c = @$this->html[$this->i++];
-		if( $this->empty( $c ) ) return ;
+		if( empty($c) && $c != '0' ) return ;
 		
 		if( $c == '<') {
-			if( $this->isEqual('!--') )
+			if( $this->html[$this->i] == '!' && $this->isEqual('!--') )
 				return $this->parseComment();
 
 			if(  $this->html[ $this->i ] == ' ' ) {
@@ -227,9 +239,15 @@ class Parser {
 
 	function parseScriptInner() {
 		$content = '';
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+		while( true ) {
+
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
+
 			if( $c1 == '<' ) {
-				if( $this->isEqual('/script') ) {
+				if( $this->html[ $this->i] == '/' && $this->isEqual('/script') ) {
 					break;
 				}
 			}
@@ -243,7 +261,12 @@ class Parser {
 
 	function parseCData() {
 		$content = '';
-		while( ! $this->empty( $c1 = $this->nextTok() ) ) {
+		while( true ) {
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
+
 			if( $c1 == ']' ) {
 				if( $this->isEqual(']>') ) {
 					break;
@@ -271,7 +294,7 @@ class Parser {
 			return $tag;
 		}
 
-		if( substr($tag->tag,0,4) == '?xml' ) { $this->isXml = true; return $tag; }
+		if( $tag->tag[0] == '?' && substr($tag->tag,0,4) == '?xml' ) { $this->isXml = true; return $tag; }
 
 		$hasNoEndTags = self::$hasNoEndTags;
 
@@ -336,6 +359,7 @@ class Parser {
 	}
 
 	function __construct( $html ) {
+
 		$this->tags = [];
 		$this->html = $html;
 		$this->i = 0;
