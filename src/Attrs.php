@@ -4,10 +4,6 @@ namespace Pejman\DomParser;
 class Attrs {
 
 	public $classList = [];
-	function __construct() {
-		
-	}
-
 	function classes() {
 		if( !empty( $this->class ) )
 			return explode(" ", @$this->class);

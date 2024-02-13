@@ -37,7 +37,7 @@ class Find {
 		if( ! $query )
 			return $tags;
 		
-		$q = new Query();
+		$q = new Query;
 		$q->iq = 0;
 		$q->query = $query;
 		$ret = $tags;

@@ -331,6 +331,7 @@ class Parser {
 		$tags = [];
 		$stag = new Tag;
 		$eq = 0;
+
 		while( $tag = $this->getTag() ) {
 
 			if( isset($tag->isEnd) && @$parent->tag == @$tag->tag ) break;

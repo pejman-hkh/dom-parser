@@ -3,9 +3,6 @@ namespace Pejman\DomParser;
 
 class Tag {
 
-	function __construct() {
-	}
-
 	function __get( $key ) {
 		if( $key == 'html' )
 			return $this->getHtml();
