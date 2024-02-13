@@ -8,7 +8,7 @@ class Find {
 			$f = true;
 			foreach( $attrs as $attr => $value ) {
 				if( $attr == 'class' ) {
-					$classes = isset($tag->attrs)?$tag->attrs->classes():[];
+					$classes = $tag->attrs?$tag->attrs->classes():[];
 					if( ! in_array($value, $classes ) )
 						$f = false;
 				} else {	
