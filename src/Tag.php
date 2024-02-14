@@ -68,6 +68,7 @@ class Tag {
 	}
 
 	function setAttribute( $name, $value ) {
+		if( $this->attrs )
 		$this->attrs->set( $name, $value );
 		return $this;
 	}
