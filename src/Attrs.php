@@ -3,6 +3,7 @@ namespace Pejman\DomParser;
 
 class Attrs {
 
+	public $class;
 	public $classList = [];
 	function classes() {
 		if( !empty( $this->class ) )
