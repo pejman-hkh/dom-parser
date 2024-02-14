@@ -80,18 +80,19 @@ class Parser {
 		return $attrs;
 	}
 
-	function ParseTag() {
+	function ParseTag( &$tag ) {
 		if( $this->html[ $this->i ] == '!' && $this->isEqual('![CDATA[') ) {
 			$this->i+= 8;
 
-			$tag = new Tag;
-			$tag->tag = 'cdata';							
-			return $tag;
+			//$tag = new Tag;
+			$tag->tag = 'cdata';
+			return;							
+			//return $tag;
 		}
 
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
-		$tag = '';
+		$name = '';
 		$attrs = [];
 		while( true ) {
 
@@ -110,32 +111,29 @@ class Parser {
 				break;
 			}
 		
-			$tag .= $c1;
+			$name .= $c1;
 		}
 
-		$ret = new Tag;
-		$ret->tag = $tag;
+		//$ret = new Tag;
+		$tag->tag = $name;
 	
-		$ret->attrs = @$attrs; 
-		$ret->isEnd = false;
-		if( $tag[0] == '/' ) {
-			$ret->isEnd = true;
-			$ret->tag = substr($tag,1);
+		$tag->attrs = @$attrs; 
+		$tag->isEnd = false;
+		if( $name[0] == '/' ) {
+			$tag->isEnd = true;
+			$tag->tag = substr($name,1);
 		}
 
-		if( $tag[strlen($tag)-1] == '/' ) {
-			$ret->tag = substr( $tag, 0, -1);
+		if( $name[strlen($name)-1] == '/' ) {
+			$tag->tag = substr( $name, 0, -1);
 		}
 		
-		return $ret;
+		//return $ret;
 	}
 
 
-	function parseContents() {
-
-		
+	function parseContents( &$tag ) {
 		$this->i--;
-
 		$content = '';
 		while( true ) {
 			$c1 = $this->html[ $this->i++ ];
@@ -152,14 +150,11 @@ class Parser {
 
 		$this->i--;
 
-		$tag = new Tag;
 		$tag->tag = 'empty';
 		$tag->content = $content;
-
-		return $tag;
 	}
 
-	function parseComment() {
+	function parseComment( &$tag ) {
 		$this->i += 3;
 		$content = '';
 		while( true ) {
@@ -175,14 +170,11 @@ class Parser {
 		}
 		$this->i += 3;
 
-		$tag = new Tag;
 		$tag->tag = 'comment';
 		$tag->content = $content;
-
-		return $tag;
 	}
 
-	function parsePhp() {
+	function parsePhp( &$tag ) {
 
 		$this->i += 1;
 		$content = '';
@@ -200,38 +192,40 @@ class Parser {
 		}
 		$this->i += 2;
 
-		$tag = new Tag;
 		$tag->tag = 'php';
-		$tag->content = $content;
-
-		return $tag;		
+		$tag->content = $content;	
 	}
 
-	function next1() {
+	function next1( &$tag ) {
 		$c = @$this->html[$this->i++];
-		if( empty($c) && $c != '0' ) return ;
+		if( empty($c) && $c != '0' ) return false;
 		
 		if( $c == '<') {
-			if( $this->html[$this->i] == '!' && $this->isEqual('!--') )
-				return $this->parseComment();
+			if( $this->html[$this->i] == '!' && $this->isEqual('!--') ) {
+				$this->parseComment( $tag );
+				return true; 
+			}
 
 			if(  $this->html[ $this->i ] == ' ' ) {
 				$this->i++;
-				$cn = $this->parseContents();
-				$cn->content = '<'.$cn->content;
-				return $cn;
+				$this->parseContents( $tag );
+				$tag->content = '<'.$tag->content;
+				return true;
 			}
 
-			return $this->ParseTag();
+			$this->ParseTag( $tag );
+			return true; 
 		} else {
-			return $this->parseContents();
+			$this->parseContents( $tag );
+			return true; 
 		}
-	
+
 	}
 
-	function next() {
-		$this->current = $this->next1();
-		return $this->current;
+	function next( &$tag ) {
+		$ret = $this->next1( $tag );
+		$this->current = $tag;
+		return $ret;
 	}
 
 	function isEqual( $text ) {
@@ -289,18 +283,17 @@ class Parser {
 		return $content;
 	}
 
-	function getTag() {
+	function getTag( &$tag ) {
 
-		$tag = $this->next();
-		if( ! isset($tag) )
-			return;
+		if( ! $this->next( $tag ) )
+			return false;
 
 		if( $tag->tag == 'cdata' ) {
 			$tag->content = $this->parseCData();
-			return $tag;
+			return true;
 		}
 
-		if( $tag->tag[0] == '?' && substr($tag->tag,0,4) == '?xml' ) { $this->isXml = true; return $tag; }
+		if( $tag->tag[0] == '?' && substr($tag->tag,0,4) == '?xml' ) { $this->isXml = true; return true; }
 
 		$hasNoEndTags = self::$hasNoEndTags;
 
@@ -308,9 +301,9 @@ class Parser {
 			unset( $hasNoEndTags[11] );
 		}
 
-		if( in_array( @$tag->tag, $hasNoEndTags ) ) return $tag;
+		if( in_array( @$tag->tag, $hasNoEndTags ) ) return true;
 
-		if( $tag->isEnd ) return $tag;
+		if( $tag->isEnd ) return true;
 
 		if( $tag->tag == 'script' ) {
 			$content = $this->parseScriptInner();
@@ -322,15 +315,19 @@ class Parser {
 		}
 
 		if( isset( $tag->tag ) && @$tag->tag == @$this->current->tag ) {
-			return $tag;
+			return true;
 		}
 
-		while( $etag = $this->next() ) {
+		while( true ) {
+			$etag = new Tag;
+			if( ! $this->next( $etag ) ) {
+				break;
+			}
 			if( isset( $etag->tag ) && $tag->tag == @$etag->tag )
 				break;
 		}
 
-		return $tag;
+		return true;
 	}
 
 	function parse( &$parent = '' ) {
@@ -338,7 +335,12 @@ class Parser {
 		$stag = new Tag;
 		$eq = 0;
 
-		while( $tag = $this->getTag() ) {
+		while( true ) {
+			$tag = new Tag;
+
+			if( ! $this->getTag( $tag ) ) {
+				break;
+			}
 
 			if( $tag->isEnd && @$parent->tag == @$tag->tag ) break;
 
