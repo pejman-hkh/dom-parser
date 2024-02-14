@@ -194,7 +194,8 @@ class Parser {
 
 			$pos = strpos( $this->html, '-', $start );
 			if( ! $pos ) {
-				$pos = $this->length;
+				$this->i = $this->length;
+				break;
 			}
 	
 			$len =  $pos-$base;
@@ -261,7 +262,8 @@ class Parser {
 
 			$pos = strpos( $this->html, '<', $start );
 			if( ! $pos ) {
-				$pos = $this->length;
+				$this->i = $this->length;
+				break;
 			}
 	
 			$len =  $pos-$base;
