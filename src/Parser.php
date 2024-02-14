@@ -7,7 +7,7 @@ class Parser {
 	private $i;
 
 	private $current;
-	private $document;
+	public $document;
 
 	function ParseAttr() {
 		$attrs = new Attrs;
