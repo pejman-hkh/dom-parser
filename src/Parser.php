@@ -7,6 +7,7 @@ class Parser {
 	private $i;
 	private $current;
 	public $document;
+	public $length;
 	protected $isXml = false;
 	public static 	$hasNoEndTags = ['comment', 'php', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
 
@@ -38,6 +39,8 @@ class Parser {
 				}
 			
 				$value = '';
+				$start = $this->i;
+				$len = 0;
 				while( true ) {
 
 					$c2 = $this->html[ $this->i++ ];
@@ -57,9 +60,9 @@ class Parser {
 					if( $c2 == $t )
 						break;
 					
-					$value .= $c2;
+					$len++;
 				}
-		
+				$value = substr( $this->html, $start, $len );
 				$attrs->$nowAttr = $value;
 				$attr = '';
 			}
@@ -132,25 +135,34 @@ class Parser {
 	
 	}
 
-
-	function parseContents( &$tag ) {
+	function parseContents( &$tag ) {		
 		$this->i--;
+
 		$content = '';
 		$len = 0; 
-		$start = $this->i;
-		while( true ) {
-			$c1 = $this->html[ $this->i++ ];
+		$start = $base = $this->i;
+		// while( true ) {
+		// 	$c1 = $this->html[ $this->i++ ];
 
-			if( empty($c1 ) && $c1 != '0' ) {
-				break;
-			}
+		// 	if( empty($c1 ) && $c1 != '0' ) {
+		// 		break;
+		// 	}
 
-			if( $c1 == '<' ) {
-				break;
-			}
-			$len++;
-			//$content .= $c1;
+		// 	if( $c1 == '<' ) {
+		// 		break;
+		// 	}
+		// 	$len++;
+		// 	//$content .= $c1;
+		// }
+
+		$pos = strpos( $this->html, '<', $start );
+		if( ! $pos ) {
+			$pos = $this->length;
 		}
+
+		$len =  $pos-$base;
+		$this->i =  $pos+1;
+
 		$content = substr( $this->html, $start, $len );
 
 		$this->i--;
@@ -162,22 +174,41 @@ class Parser {
 	function parseComment( &$tag ) {
 		$this->i += 3;
 		$content = '';
-		$start = $this->i;
+		$start = $base = $this->i;
 		$len = 0;
+		// while( true ) {
+		// 	$c1 = $this->html[ $this->i++ ];
+		// 	if( empty($c1 ) && $c1 != '0' ) {
+		// 		break;
+		// 	}
+
+		// 	if( $this->html[$this->i] == '-' && $this->isEqual('-->') ) 
+		// 		break;
+
+		// 	$len++;
+		// 	//$content .= $c1;
+		// }
+
+
 		while( true ) {
-			$c1 = $this->html[ $this->i++ ];
-			if( empty($c1 ) && $c1 != '0' ) {
+
+			$pos = strpos( $this->html, '-', $start );
+			if( ! $pos ) {
+				$pos = $this->length;
+			}
+	
+			$len =  $pos-$base;
+			$this->i =  $pos+1;
+		
+			if( $this->isEqual('->') ) {
 				break;
 			}
-
-			if( $this->html[$this->i] == '-' && $this->isEqual('-->') ) 
-				break;
-
-			$len++;
-			//$content .= $c1;
+		
+			$start = $pos+1;
 		}
-		$content = substr( $this->html, $start, $len );
-		$this->i += 3;
+
+		$content = substr( $this->html, $base, $len );
+		$this->i += 2;
 
 		$tag->tag = 'comment';
 		$tag->content = $content;
@@ -204,6 +235,76 @@ class Parser {
 		$tag->tag = 'php';
 		$tag->content = $content;	
 	}
+
+	function parseScriptInner() {
+		$content = '';
+		$start = $base = $this->i;
+		$len = 0;
+		// while( true ) {
+
+		// 	$c1 = $this->html[ $this->i++ ];
+		// 	if( empty($c1 ) && $c1 != '0' ) {
+		// 		break;
+		// 	}
+
+		// 	if( $c1 == '<' ) {
+		// 		if( $this->html[ $this->i] == '/' && $this->isEqual('/script') ) {
+		// 			break;
+		// 		}
+		// 	}
+
+		// 	$len++;
+		// 	//$content .= $c1;
+		// }
+
+		while( true ) {
+
+			$pos = strpos( $this->html, '<', $start );
+			if( ! $pos ) {
+				$pos = $this->length;
+			}
+	
+			$len =  $pos-$base;
+			$this->i =  $pos+1;
+			if( $this->isEqual('/script') ) {
+				break;
+			}
+
+			$start = $pos+1;
+		}
+
+		$content = substr( $this->html, $base, $len );
+	
+		$this->i+= 8;
+		return $content;
+	}
+
+	function parseCData() {
+		$content = '';
+		$start = $this->i;
+		$len = 0;
+		while( true ) {
+			$c1 = $this->html[ $this->i++ ];
+			if( empty($c1 ) && $c1 != '0' ) {
+				break;
+			}
+
+			if( $c1 == ']' ) {
+				if( $this->isEqual(']>') ) {
+					break;
+				}
+			}
+
+			//$content .= $c1;
+			$len++;
+		}
+
+		$content = substr( $this->html, $start, $len );
+	
+		$this->i+= 2;
+		return $content;
+	}
+
 
 	function next1( &$tag ) {
 		$c = @$this->html[$this->i++];
@@ -247,59 +348,6 @@ class Parser {
 		
 		}
 		return true;
-	}
-
-	function parseScriptInner() {
-		$content = '';
-		$start = $this->i;
-		$len = 0;
-		while( true ) {
-
-			$c1 = $this->html[ $this->i++ ];
-			if( empty($c1 ) && $c1 != '0' ) {
-				break;
-			}
-
-			if( $c1 == '<' ) {
-				if( $this->html[ $this->i] == '/' && $this->isEqual('/script') ) {
-					break;
-				}
-			}
-
-			$len++;
-			//$content .= $c1;
-		}
-
-		$content = substr( $this->html, $start, $len );
-	
-		$this->i+= 8;
-		return $content;
-	}
-
-	function parseCData() {
-		$content = '';
-		$start = $this->i;
-		$len = 0;
-		while( true ) {
-			$c1 = $this->html[ $this->i++ ];
-			if( empty($c1 ) && $c1 != '0' ) {
-				break;
-			}
-
-			if( $c1 == ']' ) {
-				if( $this->isEqual(']>') ) {
-					break;
-				}
-			}
-
-			//$content .= $c1;
-			$len++;
-		}
-
-		$content = substr( $this->html, $start, $len );
-	
-		$this->i+= 2;
-		return $content;
 	}
 
 	function getTag( &$tag ) {
@@ -390,6 +438,7 @@ class Parser {
 
 		$this->html = $html;
 		$this->i = 0;
+		$this->length = strlen( $html );
 
 		$document = new Tag;
 		$document->tag = 'document';
