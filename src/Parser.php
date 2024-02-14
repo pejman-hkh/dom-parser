@@ -3,6 +3,12 @@ namespace Pejman\DomParser;
 
 class Parser {
 
+	private $html;
+	private $i;
+
+	private $current;
+	private $document;
+
 	function ParseAttr() {
 		$attrs = new Attrs;
 		$attr = '';
@@ -116,7 +122,7 @@ class Parser {
 			$ret->tag = substr($tag,1);
 		}
 
-		if( $a[strlen($a)-1] == '/' ) {
+		if( $tag[strlen($tag)-1] == '/' ) {
 			$ret->tag = substr( $tag, 0, -1);
 		}
 		
@@ -126,7 +132,9 @@ class Parser {
 
 	function parseContents() {
 
+		
 		$this->i--;
+
 		$content = '';
 		while( true ) {
 			$c1 = $this->html[ $this->i++ ];
@@ -355,13 +363,12 @@ class Parser {
 
 
 	function find( $query = '', $index = [] ) {
-		$f = new Find();
+		$f = new Find;
 		return $f->find( $query, $this->document->childrens, $index );
 	}
 
 	function __construct( $html ) {
 
-		$this->tags = [];
 		$this->html = $html;
 		$this->i = 0;
 
