@@ -5,14 +5,14 @@ final class commentTest extends TestCase
 {
 
     protected function setUp(): void {
-        $p = new \Pejman\DomParser\Parser( '<div class="alert alert-info">یک اشتراک را انتخاب کنید <!-- ( کمک مالی اختیاری میباشد. )  --></div>');
+        $p = new \Pejman\DomParser\Parser( '<div class="alert alert-info">Test <!-- Test Comment  --></div>');
         $this->document = $p->document;
     }
 
     public function testNext()
     {
 
-        $this->assertSame( $this->document->html, '<div class="alert alert-info">یک اشتراک را انتخاب کنید </div>');
+        $this->assertSame( $this->document->html, '<div class="alert alert-info">Test </div>');
        
     }
 
