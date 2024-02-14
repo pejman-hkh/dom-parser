@@ -84,16 +84,16 @@ class Parser {
 		if( $this->html[ $this->i ] == '!' && $this->isEqual('![CDATA[') ) {
 			$this->i+= 8;
 
-			//$tag = new Tag;
 			$tag->tag = 'cdata';
 			return;							
-			//return $tag;
 		}
 
 		if( @$this->html[ $this->i+1 ] == '/' ) $this->i++;
 
 		$name = '';
 		$attrs = [];
+		$start = $this->i;
+		$len = 0;
 		while( true ) {
 
 			$c1 = $this->html[ $this->i++ ];
@@ -110,11 +110,13 @@ class Parser {
 				$attrs = $this->ParseAttr();
 				break;
 			}
-		
-			$name .= $c1;
+			
+			$len++;
+			//$name .= $c1;
 		}
 
-		//$ret = new Tag;
+		$name = substr( $this->html, $start, $len );
+
 		$tag->tag = $name;
 	
 		$tag->attrs = @$attrs; 
@@ -124,17 +126,18 @@ class Parser {
 			$tag->tag = substr($name,1);
 		}
 
-		if( $name[strlen($name)-1] == '/' ) {
+		if( $name[$len-1] == '/' ) {
 			$tag->tag = substr( $name, 0, -1);
 		}
-		
-		//return $ret;
+	
 	}
 
 
 	function parseContents( &$tag ) {
 		$this->i--;
 		$content = '';
+		$len = 0; 
+		$start = $this->i;
 		while( true ) {
 			$c1 = $this->html[ $this->i++ ];
 
@@ -145,8 +148,10 @@ class Parser {
 			if( $c1 == '<' ) {
 				break;
 			}
-			$content .= $c1;
+			$len++;
+			//$content .= $c1;
 		}
+		$content = substr( $this->html, $start, $len );
 
 		$this->i--;
 
@@ -157,6 +162,8 @@ class Parser {
 	function parseComment( &$tag ) {
 		$this->i += 3;
 		$content = '';
+		$start = $this->i;
+		$len = 0;
 		while( true ) {
 			$c1 = $this->html[ $this->i++ ];
 			if( empty($c1 ) && $c1 != '0' ) {
@@ -166,8 +173,10 @@ class Parser {
 			if( $this->html[$this->i] == '-' && $this->isEqual('-->') ) 
 				break;
 
-			$content .= $c1;
+			$len++;
+			//$content .= $c1;
 		}
+		$content = substr( $this->html, $start, $len );
 		$this->i += 3;
 
 		$tag->tag = 'comment';
@@ -242,6 +251,8 @@ class Parser {
 
 	function parseScriptInner() {
 		$content = '';
+		$start = $this->i;
+		$len = 0;
 		while( true ) {
 
 			$c1 = $this->html[ $this->i++ ];
@@ -255,8 +266,11 @@ class Parser {
 				}
 			}
 
-			$content .= $c1;
+			$len++;
+			//$content .= $c1;
 		}
+
+		$content = substr( $this->html, $start, $len );
 	
 		$this->i+= 8;
 		return $content;
@@ -264,6 +278,8 @@ class Parser {
 
 	function parseCData() {
 		$content = '';
+		$start = $this->i;
+		$len = 0;
 		while( true ) {
 			$c1 = $this->html[ $this->i++ ];
 			if( empty($c1 ) && $c1 != '0' ) {
@@ -276,8 +292,11 @@ class Parser {
 				}
 			}
 
-			$content .= $c1;
+			//$content .= $c1;
+			$len++;
 		}
+
+		$content = substr( $this->html, $start, $len );
 	
 		$this->i+= 2;
 		return $content;
@@ -314,7 +333,7 @@ class Parser {
 				$tag->childrens = $childrens;			
 		}
 
-		if( isset( $tag->tag ) && @$tag->tag == @$this->current->tag ) {
+		if(  @$tag->tag == @$this->current->tag ) {
 			return true;
 		}
 
@@ -323,7 +342,7 @@ class Parser {
 			if( ! $this->next( $etag ) ) {
 				break;
 			}
-			if( isset( $etag->tag ) && $tag->tag == @$etag->tag )
+			if( $tag->tag == @$etag->tag )
 				break;
 		}
 
@@ -344,7 +363,7 @@ class Parser {
 
 			if( $tag->isEnd && @$parent->tag == @$tag->tag ) break;
 
-			if( isset( $tag->tag ) && $tag->tag == 'empty' && empty( trim($tag->content) ) )
+			if( $tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
 
 			if( ! $tag->isEnd ) {
