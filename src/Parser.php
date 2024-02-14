@@ -5,9 +5,10 @@ class Parser {
 
 	private $html;
 	private $i;
-
 	private $current;
 	public $document;
+	protected $isXml = false;
+	public static 	$hasNoEndTags = ['comment', 'php', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
 
 	function ParseAttr() {
 		$attrs = new Attrs;
@@ -116,7 +117,7 @@ class Parser {
 		$ret->tag = $tag;
 	
 		$ret->attrs = @$attrs; 
-
+		$ret->isEnd = false;
 		if( $tag[0] == '/' ) {
 			$ret->isEnd = true;
 			$ret->tag = substr($tag,1);
@@ -288,9 +289,6 @@ class Parser {
 		return $content;
 	}
 
-	protected $isXml = false;
-	public static 	$hasNoEndTags = ['comment', 'php', 'empty','!DOCTYPE', 'area', 'base', 'col', 'embed', 'param', 'source', 'track', 'meta', 'link', 'br', 'input', 'hr', 'img'];
-
 	function getTag() {
 
 		$tag = $this->next();
@@ -312,7 +310,7 @@ class Parser {
 
 		if( in_array( @$tag->tag, $hasNoEndTags ) ) return $tag;
 
-		if( isset($tag->isEnd) ) return $tag;
+		if( $tag->isEnd ) return $tag;
 
 		if( $tag->tag == 'script' ) {
 			$content = $this->parseScriptInner();
@@ -342,12 +340,12 @@ class Parser {
 
 		while( $tag = $this->getTag() ) {
 
-			if( isset($tag->isEnd) && @$parent->tag == @$tag->tag ) break;
+			if( $tag->isEnd && @$parent->tag == @$tag->tag ) break;
 
 			if( isset( $tag->tag ) && $tag->tag == 'empty' && empty( trim($tag->content) ) )
 				continue;
 
-			if( ! isset($tag->isEnd) ) {
+			if( ! $tag->isEnd ) {
 				$tag->eq = $eq++;
 				$tag->prev = $stag;
 				$tag->parent = $parent;
