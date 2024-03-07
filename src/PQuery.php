@@ -3,6 +3,7 @@ namespace Pejman\DomParser;
 
 class PQuery {
     public static $document;
+    private $elements;
 
     function __construct( $selector ) {
         if( is_string( $selector ) )
@@ -42,14 +43,14 @@ class PQuery {
         if( ! $html )
             return $this->elements[0]->html;
 
-        return $this->each(function( $element ) {
+        return $this->each(function( $element ) use( $html ) {
             $element->html( $html );
         });
     }
 
     function attr( $key, $value = '' ) {
         if( ! $value ) return $this->elements[0]?$this->elements[0]->attr( $key ):'';
-        return $this->each(function() {
+        return $this->each(function( $element ) use( $key, $value ) {
             $element->attr( $key, $value );
         });
     }
@@ -62,5 +63,3 @@ class PQuery {
         return pq( $this->elements[0]->prev );
     }
 }
-
-?>
