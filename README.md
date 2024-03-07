@@ -1,10 +1,10 @@
-# dom-parser
-Fast php HTML DOM parser
-- All php version work properly without extension
-- No need php extension
+# PHP-DOM-Parser
+Fast PHP HTML DOM parser
+- All PHP version work properly without extension
+- No need PHP extension
 - No Regex used
-- Can embed to another languages like js
-- Can load xml file like html
+- Can embed to another languages like JS
+- Can load XML file like HTML
 - PQuery like JQuery
 
 # Install :

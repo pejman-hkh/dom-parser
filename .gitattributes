@@ -2,3 +2,5 @@
 /examples       export-ignore
 test.sh       export-ignore
 README.md       export-ignore
+/extension	export-ignore
+/c	export-ignore
