@@ -3,7 +3,6 @@ namespace Pejman\DomParser;
 
 class Parser {
 
-	private $tag;
 	private $html;
 	private $i;
 	private $current;
@@ -84,8 +83,7 @@ class Parser {
 		return $attrs;
 	}
 
-	function ParseTag() {
-		$tag = $this->tag;
+	function ParseTag( &$tag ) {
 		if( $this->html[ $this->i ] == '!' && $this->isEqual('![CDATA[') ) {
 			$this->i+= 8;
 
@@ -134,11 +132,10 @@ class Parser {
 		if( $name[$len-1] == '/' ) {
 			$tag->tag = substr( $name, 0, -1);
 		}
-		return true;
+	
 	}
 
-	function parseContents( $first = '' ) {
-		$tag = $this->tag;		
+	function parseContents( &$tag ) {		
 		$this->i--;
 
 		$content = '';
@@ -170,14 +167,11 @@ class Parser {
 
 		$this->i--;
 
-
 		$tag->tag = 'empty';
-		$tag->content = ($first?:'').$content;
-		return true;
+		$tag->content = $content;
 	}
 
-	function parseComment() {
-		$tag = $this->tag;
+	function parseComment( &$tag ) {
 		$this->i += 3;
 		$content = '';
 		$start = $base = $this->i;
@@ -219,11 +213,10 @@ class Parser {
 
 		$tag->tag = 'comment';
 		$tag->content = $content;
-		return true;
 	}
 
-	function parsePhp() {
-		$tag = $this->tag;
+	function parsePhp( &$tag ) {
+
 		$this->i += 1;
 		$content = '';
 		while( true ) {
@@ -315,36 +308,35 @@ class Parser {
 	}
 
 
-	function next1() {
-		$tag = $this->tag;
+	function next1( &$tag ) {
 		$c = @$this->html[$this->i++];
 		if( empty($c) && $c != '0' ) return false;
 		
 		if( $c == '<') {
 			if( $this->html[$this->i] == '!' && $this->isEqual('!--') ) {
-				$this->parseComment();
+				$this->parseComment( $tag );
 				return true; 
 			}
 
 			if(  $this->html[ $this->i ] == ' ' ) {
 				$this->i++;
+				$this->parseContents( $tag );
 				$tag->content = '<'.$tag->content;
-				return $this->parseContents( '<' );
+				return true;
 			}
 
-			return $this->ParseTag();
-	
+			$this->ParseTag( $tag );
+			return true; 
 		} else {
-			return $this->parseContents();
-
+			$this->parseContents( $tag );
+			return true; 
 		}
 
 	}
 
-	function next() {
-		$tag = $this->tag;
-		$ret = $this->next1();
-		$this->current = &$tag;
+	function next( &$tag ) {
+		$ret = $this->next1( $tag );
+		$this->current = $tag;
 		return $ret;
 	}
 
@@ -360,9 +352,9 @@ class Parser {
 		return true;
 	}
 
-	function getTag() {
-		$tag = $this->tag;
-		if( ! $this->next() )
+	function getTag( &$tag ) {
+
+		if( ! $this->next( $tag ) )
 			return false;
 
 		if( $tag->tag == 'cdata' ) {
@@ -397,28 +389,25 @@ class Parser {
 
 		while( true ) {
 			$etag = new Tag;
-			$this->tag = $etag;
-			if( ! $this->next() ) {
+			if( ! $this->next( $etag ) ) {
 				break;
 			}
 			if( $tag->tag == @$etag->tag )
 				break;
 		}
-		$this->tag = $tag;
-		
+
 		return true;
 	}
 
-	function parse( $parent = '' ) {
+	function parse( &$parent = '' ) {
 		$tags = [];
 		$stag = new Tag;
 		$eq = 0;
 
 		while( true ) {
 			$tag = new Tag;
-			$this->tag = $tag;
 
-			if( ! $this->getTag() ) {
+			if( ! $this->getTag( $tag ) ) {
 				break;
 			}
 
